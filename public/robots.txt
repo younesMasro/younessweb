@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://younessweb.me
+
+# Sitemaps
+Sitemap: https://younessweb.me/sitemap.xml

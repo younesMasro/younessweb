@@ -1,0 +1,393 @@
+{
+  "Languages": {
+    "en": "Anglais",
+    "fr": "Français",
+    "ar": "Arabe"
+  },
+  "Nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Tarifs",
+    "reviews": "Avis",
+    "contact": "Contact",
+    "cta": "Démarrer mon site"
+  },
+  "HomeMeta": {
+    "title": "Youness Web — Studio de création de sites web modernes",
+    "description": "Youness Web conçoit des sites web premium, modernes et orientés conversion pour les entreprises, marques, boutiques et entrepreneurs. Création de sites vitrines, e-commerce et landing pages qui transforment vos visiteurs en clients.",
+    "keywords": "création de site web, conception de site web professionnel, création de boutique en ligne, création de landing page, refonte de site web, développement de site web sur-mesure"
+  },
+  "ServicesMeta": {
+    "title": "Services de Création de Sites Web — Youness Web",
+    "description": "Sites vitrines, boutiques en ligne, landing pages, portfolios, sites de réservation et refontes — création de sites web professionnels pour entreprises et marques.",
+    "keywords": "services de conception web, création de site vitrine, développement de boutique en ligne, création de landing page, création de site portfolio, refonte de site web"
+  },
+  "PortfolioMeta": {
+    "title": "Portfolio — Sites Web Conçus par Youness Web",
+    "description": "Découvrez les sites web et boutiques en ligne récemment conçus et développés par Youness Web pour des entreprises et des marques.",
+    "keywords": "portfolio de création de site web, exemples de sites web professionnels, réalisations de sites web"
+  },
+  "PricingMeta": {
+    "title": "Tarifs — Site WordPress ou Sur-Mesure | Youness Web",
+    "description": "Comparez la formule Site Web Professionnel WordPress à partir de 2 500 MAD et la formule Site Web Premium Sur-Mesure à partir de 5 000 MAD. Des tarifs clairs et transparents.",
+    "keywords": "tarif de site web, prix de création de site web, prix d'un site WordPress, prix d'un site sur-mesure"
+  },
+  "ReviewsMeta": {
+    "title": "Avis Clients — Youness Web",
+    "description": "Découvrez ce que disent les chefs d'entreprise après avoir travaillé avec Youness Web sur leur site professionnel.",
+    "keywords": "avis clients, témoignages création de site web, avis agence de conception web"
+  },
+  "ContactMeta": {
+    "title": "Contact — Démarrez Votre Site Aujourd'hui | Youness Web",
+    "description": "Parlez-nous de votre entreprise et faites-vous aider à choisir entre un Site Web Professionnel WordPress et un Site Web Premium Sur-Mesure.",
+    "keywords": "contact développeur web, devis site web, démarrer un projet de site web"
+  },
+  "Home": {
+    "hero": {
+      "badge": "Studio de création de sites web",
+      "titlePrefix": "Des sites web qui transforment vos",
+      "titleHighlight": "visiteurs",
+      "titleSuffix": "en clients",
+      "subheadline": "Nous concevons des sites web premium et modernes pour les entreprises et marques qui veulent paraître crédibles, attirer plus de clients et vendre en ligne.",
+      "ctaPrimary": "Démarrer mon site",
+      "ctaSecondary": "Voir mes projets",
+      "statProjects": "Projets livrés",
+      "statClients": "Clients satisfaits",
+      "statSupport": "Support après lancement"
+    },
+    "conversionCard": {
+      "title": "Démarrez votre projet de site web",
+      "subtitle": "Choisissez comment commencer et découvrez la meilleure solution pour votre entreprise.",
+      "ctaStart": "Démarrer mon projet",
+      "ctaServices": "Découvrir les services",
+      "ctaPortfolio": "Voir les projets"
+    },
+    "servicesPreview": {
+      "badge": "Services",
+      "title": "Tout ce dont votre entreprise a besoin en ligne",
+      "subtitle": "D'un site vitrine professionnel à une expérience entièrement sur-mesure.",
+      "cta": "Voir tous les services"
+    },
+    "portfolioPreview": {
+      "badge": "Portfolio",
+      "title": "Réalisations récentes",
+      "subtitle": "Une sélection de sites web conçus et développés par Youness Web.",
+      "cta": "Voir tous les projets"
+    },
+    "pricingPreview": {
+      "badge": "Tarifs",
+      "title": "Deux formules, un choix clair",
+      "subtitle": "Un site professionnel WordPress, ou un site premium sur-mesure.",
+      "cta": "Comparer les formules"
+    },
+    "reviewsPreview": {
+      "badge": "Témoignages",
+      "title": "La confiance des chefs d'entreprise",
+      "subtitle": "Ce que disent les clients après avoir travaillé avec Youness Web.",
+      "cta": "Lire les avis clients",
+      "realFeedback": "Avis clients authentiques"
+    },
+    "finalCta": {
+      "title": "Prêt pour un site web qui vend réellement ?",
+      "subtitle": "Parlez-nous de votre entreprise et construisons ensemble un site qui vous apporte plus de clients.",
+      "cta": "Démarrer mon site"
+    },
+    "stats": {
+      "badge": "Résultats concrets",
+      "title": "Des chiffres qui inspirent confiance",
+      "items": {
+        "years": "Années de création de sites web",
+        "projects": "Sites web et projets digitaux réalisés",
+        "brands": "Marques et entreprises accompagnées",
+        "types": "Types de sites web réalisés"
+      }
+    },
+    "logos": {
+      "badge": "Portfolio",
+      "title": "Une confiance construite à travers de vrais projets",
+      "subtitle": "Une sélection de marques, boutiques et entreprises pour qui j'ai créé un site web."
+    }
+  },
+  "WhyYounessWeb": {
+    "badge": "Pourquoi Youness Web",
+    "title": "Pourquoi les entreprises choisissent Youness Web",
+    "subtitle": "Un partenaire qui comprend à la fois le design et les résultats business.",
+    "points": {
+      "clearCommunication": "Communication claire",
+      "modernDirection": "Direction visuelle moderne",
+      "conversionFocused": "Structure orientée conversion",
+      "mobileFirst": "Sites web mobile-first",
+      "seoReady": "Base optimisée pour le SEO",
+      "fastSecure": "Livraison rapide et sécurisée",
+      "supportAfterLaunch": "Support après le lancement",
+      "tutorialVideos": "Vidéos tutorielles pour gérer le site"
+    }
+  },
+  "ServicesPage": {
+    "hero": {
+      "badge": "Services",
+      "title": "Tout ce dont votre entreprise a besoin en ligne",
+      "subtitle": "De votre premier site professionnel à une expérience digitale entièrement sur-mesure — chaque service est pensé pour générer confiance et résultats."
+    },
+    "process": {
+      "badge": "Processus",
+      "title": "Un processus clair, de l'idée au lancement",
+      "subtitle": "Aucune confusion, aucune surprise. Un processus éprouvé qui transforme votre idée en un site web performant.",
+      "steps": {
+        "discover": {
+          "title": "Découverte de votre entreprise",
+          "description": "Nous apprenons à connaître votre entreprise, vos clients et vos objectifs."
+        },
+        "plan": {
+          "title": "Planification de la structure",
+          "description": "Nous définissons les pages et contenus qui convertiront vos visiteurs."
+        },
+        "design": {
+          "title": "Direction visuelle",
+          "description": "Nous créons une identité moderne et premium alignée avec votre marque."
+        },
+        "build": {
+          "title": "Développement du site",
+          "description": "Nous développons un site rapide, responsive et sécurisé."
+        },
+        "test": {
+          "title": "Tests et optimisation",
+          "description": "Nous testons sur chaque appareil et optimisons la performance et le SEO."
+        },
+        "launch": {
+          "title": "Lancement et support",
+          "description": "Nous lançons votre site et vous accompagnons après la livraison."
+        }
+      }
+    },
+    "cta": {
+      "title": "Vous ne savez pas quel service choisir ?",
+      "subtitle": "Parlez-nous de votre projet et nous vous aiderons à choisir la bonne solution.",
+      "cta": "Démarrer mon site"
+    }
+  },
+  "PortfolioPage": {
+    "hero": {
+      "badge": "Portfolio",
+      "title": "Réalisations récentes",
+      "subtitle": "Une sélection de sites web et boutiques en ligne conçus et développés par Youness Web."
+    },
+    "filters": {
+      "all": "Tous les projets"
+    },
+    "viewProject": "Voir le projet",
+    "cta": {
+      "title": "Ce que vous voyez vous plaît ?",
+      "subtitle": "Construisons un site comme celui-ci pour votre entreprise.",
+      "cta": "Démarrer mon site"
+    },
+    "requestSimilar": "Demander un site similaire"
+  },
+  "PricingPage": {
+    "hero": {
+      "badge": "Tarifs",
+      "title": "Des tarifs simples et transparents",
+      "subtitle": "Deux formules pensées pour différents besoins — de votre premier site professionnel à une expérience premium entièrement sur-mesure."
+    },
+    "startingFrom": "À partir de",
+    "popular": "Recommandé",
+    "currency": "MAD",
+    "ctaWordpress": "Choisir la formule WordPress",
+    "ctaCustom": "Choisir la formule Premium Sur-Mesure",
+    "comparison": {
+      "title": "WordPress ou Sur-Mesure",
+      "subtitle": "Une comparaison rapide pour vous aider à décider.",
+      "feature": "Critère",
+      "wordpress": "WordPress",
+      "custom": "Sur-Mesure"
+    },
+    "helpChoose": {
+      "title": "Vous ne savez pas quelle formule choisir ?",
+      "description": "Contactez-nous et nous vous aiderons à choisir la meilleure solution pour votre entreprise — sans pression, sans engagement.",
+      "cta": "Nous contacter"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Questions sur les tarifs",
+      "subtitle": "Tout ce qu'il faut savoir avant de choisir une formule.",
+      "items": [
+        {
+          "question": "Quelle est la différence entre les deux formules ?",
+          "answer": "Le Site Web Professionnel WordPress est construit sur WordPress — une solution rapide, abordable et fiable pour la plupart des entreprises. Le Site Web Premium Sur-Mesure est entièrement codé sur-mesure, avec un design unique, une meilleure performance et une expérience plus avancée."
+        },
+        {
+          "question": "Quelle formule est adaptée à mon entreprise ?",
+          "answer": "Si vous avez besoin d'un site professionnel rapidement et à un bon prix, la formule WordPress est parfaite. Si vous voulez un site unique, haut de gamme et ultra-rapide qui se démarque vraiment, la formule Premium Sur-Mesure est le meilleur choix. Pas sûr ? Contactez-nous et nous vous aiderons à décider."
+        },
+        {
+          "question": "L'hébergement est-il inclus dans les deux formules ?",
+          "answer": "Oui. Les deux formules incluent l'hébergement, un nom de domaine pendant une année complète, et une adresse email professionnelle."
+        },
+        {
+          "question": "Puis-je passer de WordPress à un site sur-mesure plus tard ?",
+          "answer": "Oui. De nombreux clients commencent avec la formule WordPress puis évoluent vers un Site Web Premium Sur-Mesure lorsque leur entreprise grandit."
+        },
+        {
+          "question": "Dois-je tout payer à l'avance ?",
+          "answer": "Nous convenons ensemble de conditions de paiement claires avant de commencer, généralement un acompte au départ et le solde à la livraison."
+        },
+        {
+          "question": "Et si je ne suis toujours pas sûr de mon choix ?",
+          "answer": "Aucun problème — remplissez le formulaire de contact et sélectionnez « Je ne suis pas sûr, aidez-moi à choisir ». Nous vous poserons quelques questions et vous recommanderons la meilleure option selon vos objectifs."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt à choisir votre formule ?",
+      "subtitle": "Parlez-nous de votre entreprise et lançons votre projet.",
+      "cta": "Démarrer mon site"
+    },
+    "moreFeatures": "+{count} fonctionnalités supplémentaires incluses"
+  },
+  "ReviewsPage": {
+    "hero": {
+      "badge": "Témoignages",
+      "title": "La confiance des chefs d'entreprise",
+      "subtitle": "De vrais retours de clients qui ont travaillé avec Youness Web sur leur site."
+    },
+    "cta": {
+      "title": "Rejoignez nos clients satisfaits",
+      "subtitle": "Construisons un site dont vous serez fier.",
+      "cta": "Démarrer mon projet"
+    },
+    "realFeedback": "Avis clients authentiques"
+  },
+  "ContactPage": {
+    "hero": {
+      "badge": "Contact",
+      "title": "Prêt à créer un site web professionnel pour votre entreprise ?",
+      "subheadline": "Parlez-moi de votre projet et je vous aiderai à choisir la meilleure solution — d'un site professionnel WordPress à une expérience premium sur-mesure.",
+      "trustPoints": {
+        "modernDesign": "Design moderne",
+        "mobileFirst": "Expérience mobile-first",
+        "clearPricing": "Tarifs clairs",
+        "supportAfterLaunch": "Support après lancement",
+        "tutorialVideos": "Vidéos tutorielles incluses"
+      }
+    },
+    "startProject": "Démarrer mon projet",
+    "why": {
+      "ctaServices": "Voir les services"
+    },
+    "pricing": {
+      "badge": "Tarifs",
+      "title": "Deux formules, un choix clair",
+      "subtitle": "Un site professionnel WordPress, ou un site premium sur-mesure.",
+      "cta": "Comparer les formules"
+    },
+    "portfolio": {
+      "badge": "Portfolio",
+      "title": "Réalisations récentes",
+      "subtitle": "Un aperçu des sites récemment créés par Youness Web.",
+      "cta": "Voir tous les projets"
+    },
+    "finalCta": {
+      "title": "Prêt à lancer votre projet ?",
+      "subtitle": "Remplissez le formulaire et lançons votre site web.",
+      "cta": "Remplir le formulaire"
+    },
+    "form": {
+      "badge": "Démarrer",
+      "title": "Construisons votre site web",
+      "subtitle": "Remplissez le formulaire ci-dessous et nous vous répondrons sous 24 heures pour discuter de votre projet.",
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "phone": "Téléphone",
+      "phonePlaceholder": "Votre numéro de téléphone",
+      "email": "Email (optionnel)",
+      "emailPlaceholder": "vous@exemple.com",
+      "websiteType": "Type de site web",
+      "websiteTypePlaceholder": "Sélectionnez un type de site",
+      "websiteTypes": {
+        "business": "Site vitrine",
+        "ecommerce": "Boutique en ligne",
+        "landing": "Landing page",
+        "portfolio": "Site portfolio",
+        "booking": "Site de réservation / contact",
+        "redesign": "Refonte de site web",
+        "other": "Autre"
+      },
+      "packageInterest": "Formule (optionnel)",
+      "packageInterestPlaceholder": "Sélectionnez une formule",
+      "packages": {
+        "wordpress": "Site Web Professionnel WordPress — à partir de 2 500 MAD",
+        "custom": "Site Web Premium Sur-Mesure — à partir de 5 000 MAD",
+        "notSure": "Je ne suis pas sûr, aidez-moi à choisir"
+      },
+      "comparePackagesLink": "Comparez les formules ici",
+      "domainStatus": "Avez-vous déjà un nom de domaine ? (optionnel)",
+      "domainStatusPlaceholder": "Sélectionnez une option",
+      "domainStatusOptions": {
+        "yes": "Oui, j'ai déjà un nom de domaine",
+        "no": "Non, j'ai besoin d'un nom de domaine",
+        "notSure": "Je ne suis pas sûr"
+      },
+      "message": "Message (optionnel)",
+      "messagePlaceholder": "Parlez-nous de votre projet, votre entreprise et vos objectifs...",
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi en cours...",
+      "error": "Une erreur est survenue. Merci de réessayer."
+    },
+    "reviews": {
+      "badge": "Avis clients",
+      "title": "Ce que disent nos clients",
+      "subtitle": "Des avis authentiques d'entrepreneurs avec qui j'ai travaillé.",
+      "cta": "Voir tous les avis",
+      "realFeedback": "Avis clients authentiques"
+    }
+  },
+  "ThankYouPage": {
+    "title": "Merci — votre demande a bien été reçue.",
+    "text": "J'ai bien reçu votre demande de projet et je vais examiner les détails avec attention. Je vous contacterai bientôt pour discuter de la meilleure solution web pour votre entreprise.",
+    "viewProjectsCta": "Voir les projets",
+    "backHomeCta": "Retour à l'accueil"
+  },
+  "Footer": {
+    "tagline": "Des sites web modernes qui transforment vos visiteurs en clients.",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "socialTitle": "Suivre",
+    "rights": "Tous droits réservés."
+  },
+  "FloatingSupport": {
+    "label": "Besoin d'aide ?",
+    "ariaLabel": "Discuter avec le support sur WhatsApp",
+    "expandedTitle": "Besoin d'aide pour votre site web ?",
+    "expandedText": "Envoyez-moi un message et je vous guiderai.",
+    "openWhatsapp": "Ouvrir WhatsApp",
+    "close": "Fermer"
+  },
+  "Capabilities": {
+    "badge": "Au-delà du site web",
+    "title": "Bien plus qu'un simple site web",
+    "subtitle": "Des fonctionnalités concrètes qui vous aident à gérer votre activité, pas seulement à la présenter.",
+    "items": {
+      "delivery": {
+        "title": "Intégration avec les sociétés de livraison",
+        "description": "Pour les boutiques en ligne, le site peut être connecté aux systèmes des sociétés de livraison lorsque cela est possible, pour gérer plus efficacement les commandes et les expéditions."
+      },
+      "notifications": {
+        "title": "Notifications de commandes et formulaires",
+        "description": "Recevez une notification par email pour chaque nouvelle commande, soumission de formulaire, demande de réservation ou action importante d'un client."
+      },
+      "payments": {
+        "title": "Modes de paiement flexibles",
+        "description": "Les boutiques en ligne peuvent proposer le paiement à la livraison, le paiement en ligne par carte, des méthodes de paiement manuelles, ou une passerelle de paiement lorsque disponible."
+      },
+      "management": {
+        "title": "Gestion simplifiée des produits et commandes",
+        "description": "Gérez vos produits, commandes, clients et stock depuis un espace de gestion simple et facile à utiliser."
+      },
+      "training": {
+        "title": "Formation après la livraison",
+        "description": "Des vidéos tutorielles sont fournies après la livraison afin que vous sachiez exactement comment gérer votre site."
+      }
+    }
+  }
+}

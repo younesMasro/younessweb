@@ -1,0 +1,393 @@
+{
+  "Languages": {
+    "en": "English",
+    "fr": "French",
+    "ar": "Arabic"
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "cta": "Start your website"
+  },
+  "HomeMeta": {
+    "title": "Youness Web — Modern Website Design Studio",
+    "description": "Youness Web creates premium, modern, conversion-focused websites for businesses, brands, stores, and entrepreneurs. Professional website design, e-commerce, and landing pages that turn visitors into clients.",
+    "keywords": "website creation, professional website design, ecommerce website development, landing page design, website redesign, custom website development"
+  },
+  "ServicesMeta": {
+    "title": "Website Design Services — Youness Web",
+    "description": "Business websites, online stores, landing pages, portfolios, booking websites, and redesigns — professional website creation for businesses and brands.",
+    "keywords": "web design services, business website design, ecommerce website development, landing page design, portfolio website design, website redesign services"
+  },
+  "PortfolioMeta": {
+    "title": "Portfolio — Websites Designed by Youness Web",
+    "description": "Explore recent websites and online stores designed and built by Youness Web for businesses and brands.",
+    "keywords": "web design portfolio, website design examples, professional website projects"
+  },
+  "PricingMeta": {
+    "title": "Pricing — WordPress vs Custom Coded Website | Youness Web",
+    "description": "Compare the Professional WordPress Website package starting from 2,500 MAD and the Premium Custom Coded Website package starting from 5,000 MAD. Clear, transparent pricing.",
+    "keywords": "website pricing, professional website cost, WordPress website price, custom website price"
+  },
+  "ReviewsMeta": {
+    "title": "Client Reviews — Youness Web",
+    "description": "Read what business owners say about working with Youness Web on their professional website.",
+    "keywords": "client reviews, website design testimonials, web design agency reviews"
+  },
+  "ContactMeta": {
+    "title": "Contact — Start Your Website Today | Youness Web",
+    "description": "Tell us about your business and get help choosing between a Professional WordPress Website and a Premium Custom Coded Website.",
+    "keywords": "contact web designer, website project quote, start a website project"
+  },
+  "Home": {
+    "hero": {
+      "badge": "Website Design Studio",
+      "titlePrefix": "Websites that turn",
+      "titleHighlight": "visitors",
+      "titleSuffix": "into clients",
+      "subheadline": "We design premium, modern websites for businesses and brands that want to look credible, attract more clients, and sell online.",
+      "ctaPrimary": "Start your website",
+      "ctaSecondary": "View my work",
+      "statProjects": "Projects delivered",
+      "statClients": "Happy clients",
+      "statSupport": "Support after launch"
+    },
+    "conversionCard": {
+      "title": "Start your website project",
+      "subtitle": "Choose how you want to begin and explore the best solution for your business.",
+      "ctaStart": "Start your project",
+      "ctaServices": "Explore services",
+      "ctaPortfolio": "View projects"
+    },
+    "servicesPreview": {
+      "badge": "Services",
+      "title": "Everything your business needs online",
+      "subtitle": "From a professional business website to a fully custom experience.",
+      "cta": "View all services"
+    },
+    "portfolioPreview": {
+      "badge": "Portfolio",
+      "title": "Recent work",
+      "subtitle": "A selection of websites designed and built by Youness Web.",
+      "cta": "View all projects"
+    },
+    "pricingPreview": {
+      "badge": "Pricing",
+      "title": "Two packages, one clear choice",
+      "subtitle": "A professional WordPress website, or a premium custom coded website.",
+      "cta": "Compare packages"
+    },
+    "reviewsPreview": {
+      "badge": "Testimonials",
+      "title": "Trusted by business owners",
+      "subtitle": "What clients say after working with Youness Web.",
+      "cta": "Read client reviews",
+      "realFeedback": "Real client feedback"
+    },
+    "finalCta": {
+      "title": "Ready for a website that actually sells?",
+      "subtitle": "Tell us about your business and let's build a website that brings you more clients.",
+      "cta": "Start your website"
+    },
+    "stats": {
+      "badge": "Track record",
+      "title": "Numbers that build trust",
+      "items": {
+        "years": "Years creating websites",
+        "projects": "Websites and digital projects created",
+        "brands": "Brands and businesses supported",
+        "types": "Website types delivered"
+      }
+    },
+    "logos": {
+      "badge": "Portfolio",
+      "title": "Trusted through real projects",
+      "subtitle": "A selection of brands, stores, and businesses I've built websites for."
+    }
+  },
+  "WhyYounessWeb": {
+    "badge": "Why Youness Web",
+    "title": "Why businesses choose Youness Web",
+    "subtitle": "A partner who understands both design and business results.",
+    "points": {
+      "clearCommunication": "Clear communication",
+      "modernDirection": "Modern visual direction",
+      "conversionFocused": "Conversion-focused structure",
+      "mobileFirst": "Mobile-first websites",
+      "seoReady": "SEO-ready foundation",
+      "fastSecure": "Fast and secure delivery",
+      "supportAfterLaunch": "Support after launch",
+      "tutorialVideos": "Tutorial videos to manage the website"
+    }
+  },
+  "ServicesPage": {
+    "hero": {
+      "badge": "Services",
+      "title": "Everything your business needs online",
+      "subtitle": "From your first professional website to a fully custom digital experience — every service is built to generate trust and results."
+    },
+    "process": {
+      "badge": "Process",
+      "title": "A clear process, from idea to launch",
+      "subtitle": "No confusion, no surprises. Just a proven process that turns your idea into a website that performs.",
+      "steps": {
+        "discover": {
+          "title": "Discover your business",
+          "description": "We learn about your business, your clients, and your goals."
+        },
+        "plan": {
+          "title": "Plan the website structure",
+          "description": "We map out the pages and content that will convert visitors."
+        },
+        "design": {
+          "title": "Design the visual direction",
+          "description": "We craft a modern, premium look aligned with your brand."
+        },
+        "build": {
+          "title": "Build the website",
+          "description": "We develop a fast, responsive, and secure website."
+        },
+        "test": {
+          "title": "Test and optimize",
+          "description": "We test on every device and fine-tune performance and SEO."
+        },
+        "launch": {
+          "title": "Launch and support",
+          "description": "We launch your website and support you after delivery."
+        }
+      }
+    },
+    "cta": {
+      "title": "Not sure which service you need?",
+      "subtitle": "Tell us about your project and we'll help you choose the right solution.",
+      "cta": "Start your website"
+    }
+  },
+  "PortfolioPage": {
+    "hero": {
+      "badge": "Portfolio",
+      "title": "Recent work",
+      "subtitle": "A selection of websites and online stores designed and built by Youness Web."
+    },
+    "filters": {
+      "all": "All projects"
+    },
+    "viewProject": "View project",
+    "cta": {
+      "title": "Like what you see?",
+      "subtitle": "Let's build a website like this for your business.",
+      "cta": "Start your website"
+    },
+    "requestSimilar": "Request similar website"
+  },
+  "PricingPage": {
+    "hero": {
+      "badge": "Pricing",
+      "title": "Simple, transparent pricing",
+      "subtitle": "Two packages designed to fit different needs — from your first professional website to a fully custom premium experience."
+    },
+    "startingFrom": "Starting from",
+    "popular": "Recommended",
+    "currency": "MAD",
+    "ctaWordpress": "Choose WordPress Package",
+    "ctaCustom": "Choose Premium Custom Package",
+    "comparison": {
+      "title": "WordPress vs Custom Coded",
+      "subtitle": "A quick side-by-side comparison to help you decide.",
+      "feature": "Feature",
+      "wordpress": "WordPress",
+      "custom": "Custom Coded"
+    },
+    "helpChoose": {
+      "title": "Not sure which package is right for you?",
+      "description": "Contact us and we'll help you choose the best solution for your business — no pressure, no obligation.",
+      "cta": "Contact us"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Pricing questions",
+      "subtitle": "Everything you need to know before choosing a package.",
+      "items": [
+        {
+          "question": "What's the difference between the two packages?",
+          "answer": "The Professional WordPress Website is built on WordPress — a fast, affordable, and reliable solution for most businesses. The Premium Custom Coded Website is fully custom-built from scratch, offering a unique design, stronger performance, and a more advanced experience."
+        },
+        {
+          "question": "Which package is right for my business?",
+          "answer": "If you need a professional website quickly at a good price, the WordPress package is a great fit. If you want a unique, high-end, ultra-fast website that truly stands out, the Premium Custom Coded package is the better choice. Not sure? Just contact us and we'll help you decide."
+        },
+        {
+          "question": "Is hosting included in both packages?",
+          "answer": "Yes. Both packages include hosting, a domain name for one full year, and a professional email address."
+        },
+        {
+          "question": "Can I upgrade from WordPress to a custom website later?",
+          "answer": "Yes. Many clients start with the WordPress package and upgrade to a Premium Custom Coded Website once their business grows."
+        },
+        {
+          "question": "Do I need to pay everything upfront?",
+          "answer": "We'll agree on clear payment terms together before starting, usually a deposit to begin and the balance upon delivery."
+        },
+        {
+          "question": "What if I'm still not sure which to choose?",
+          "answer": "No problem — fill out the contact form and select \"I'm not sure, help me choose.\" We'll ask a few questions and recommend the best option for your goals."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to choose your package?",
+      "subtitle": "Tell us about your business and let's get started.",
+      "cta": "Start your website"
+    },
+    "moreFeatures": "+{count} more features included"
+  },
+  "ReviewsPage": {
+    "hero": {
+      "badge": "Testimonials",
+      "title": "Trusted by business owners",
+      "subtitle": "Real feedback from clients who worked with Youness Web on their website."
+    },
+    "cta": {
+      "title": "Join our happy clients",
+      "subtitle": "Let's build a website you'll be proud to show off.",
+      "cta": "Start your project"
+    },
+    "realFeedback": "Real client feedback"
+  },
+  "ContactPage": {
+    "hero": {
+      "badge": "Contact",
+      "title": "Ready to build a professional website for your business?",
+      "subheadline": "Tell me about your project and I'll help you choose the best website solution — from a professional WordPress website to a premium custom-coded experience.",
+      "trustPoints": {
+        "modernDesign": "Modern design",
+        "mobileFirst": "Mobile-first experience",
+        "clearPricing": "Clear pricing",
+        "supportAfterLaunch": "Support after launch",
+        "tutorialVideos": "Tutorial videos included"
+      }
+    },
+    "startProject": "Start your project now",
+    "why": {
+      "ctaServices": "View services"
+    },
+    "pricing": {
+      "badge": "Pricing",
+      "title": "Two packages, one clear choice",
+      "subtitle": "A professional WordPress website, or a premium custom coded website.",
+      "cta": "Compare packages"
+    },
+    "portfolio": {
+      "badge": "Portfolio",
+      "title": "Recent work",
+      "subtitle": "A quick look at recent websites built by Youness Web.",
+      "cta": "View all projects"
+    },
+    "finalCta": {
+      "title": "Ready to bring your project to life?",
+      "subtitle": "Fill out the form and let's get your website started.",
+      "cta": "Fill the form"
+    },
+    "form": {
+      "badge": "Get started",
+      "title": "Let's build your website",
+      "subtitle": "Fill out the form below and we'll get back to you within 24 hours to discuss your project.",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "phone": "Phone",
+      "phonePlaceholder": "Your phone number",
+      "email": "Email (optional)",
+      "emailPlaceholder": "you@example.com",
+      "websiteType": "Website type",
+      "websiteTypePlaceholder": "Select a website type",
+      "websiteTypes": {
+        "business": "Business website",
+        "ecommerce": "Online store",
+        "landing": "Landing page",
+        "portfolio": "Portfolio website",
+        "booking": "Booking / contact website",
+        "redesign": "Website redesign",
+        "other": "Other"
+      },
+      "packageInterest": "Package (optional)",
+      "packageInterestPlaceholder": "Select a package",
+      "packages": {
+        "wordpress": "Professional WordPress Website — from 2,500 MAD",
+        "custom": "Premium Custom Coded Website — from 5,000 MAD",
+        "notSure": "I'm not sure, help me choose"
+      },
+      "comparePackagesLink": "Compare packages here",
+      "domainStatus": "Do you already have a domain name? (optional)",
+      "domainStatusPlaceholder": "Select an option",
+      "domainStatusOptions": {
+        "yes": "Yes, I already have a domain name",
+        "no": "No, I need one",
+        "notSure": "I'm not sure"
+      },
+      "message": "Message (optional)",
+      "messagePlaceholder": "Tell us about your project, your business, and your goals...",
+      "submit": "Send my request",
+      "submitting": "Sending...",
+      "error": "Something went wrong. Please try again."
+    },
+    "reviews": {
+      "badge": "Testimonials",
+      "title": "What clients say",
+      "subtitle": "Real feedback from business owners I've worked with.",
+      "cta": "View all reviews",
+      "realFeedback": "Real client feedback"
+    }
+  },
+  "ThankYouPage": {
+    "title": "Thank you — your request has been received.",
+    "text": "I received your project request and will review the details carefully. I'll contact you soon to discuss the best website solution for your business.",
+    "viewProjectsCta": "View projects",
+    "backHomeCta": "Back to home"
+  },
+  "Footer": {
+    "tagline": "Modern websites that turn visitors into clients.",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "socialTitle": "Follow",
+    "rights": "All rights reserved."
+  },
+  "FloatingSupport": {
+    "label": "Need help?",
+    "ariaLabel": "Chat with support on WhatsApp",
+    "expandedTitle": "Need help with your website?",
+    "expandedText": "Send a message and I'll guide you.",
+    "openWhatsapp": "Open WhatsApp",
+    "close": "Close"
+  },
+  "Capabilities": {
+    "badge": "Beyond the website",
+    "title": "More than just a website",
+    "subtitle": "Practical capabilities that help you run your business, not just showcase it.",
+    "items": {
+      "delivery": {
+        "title": "Delivery Integration",
+        "description": "For online stores, the website can be connected with delivery company systems when available, helping manage orders and shipping more efficiently."
+      },
+      "notifications": {
+        "title": "Order & Form Notifications",
+        "description": "Get notified by email for new orders, form submissions, booking requests, and other important customer actions."
+      },
+      "payments": {
+        "title": "Flexible Payment Methods",
+        "description": "Online stores can support cash on delivery, online card payment, manual payment methods, or a payment gateway when available."
+      },
+      "management": {
+        "title": "Easy Product & Order Management",
+        "description": "Manage products, orders, customers, and stock from a simple, easy-to-use management space."
+      },
+      "training": {
+        "title": "Training After Delivery",
+        "description": "Tutorial videos are provided after delivery so you know exactly how to manage your website."
+      }
+    }
+  }
+}
