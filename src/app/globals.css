@@ -140,6 +140,9 @@
 
   body {
     @apply bg-background text-foreground;
+    /* No background-attachment: fixed here — combined with the Lenis smooth
+       scroll transform, it causes a well-known iOS/mobile bug where the
+       page renders black past the first viewport on scroll. */
     background-image:
       radial-gradient(
         ellipse 80% 50% at 50% -10%,
@@ -151,7 +154,7 @@
         oklch(0.78 0.16 220 / 12%),
         transparent
       );
-    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
   ::selection {

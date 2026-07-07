@@ -29,6 +29,13 @@ function getVariants(direction: FadeInProps["direction"]): Variants {
   };
 }
 
+// Callers stagger delay by list index (e.g. `delay={0.06 * i}`). On long
+// lists (dozens of portfolio cards, reviews, etc.) that grows unbounded, so
+// a fast scroll can reach an item before its delay elapses — it then sits
+// at opacity 0 until the timer catches up, which reads as missing/black
+// content. Capping the delay keeps the stagger feel without that risk.
+const MAX_DELAY = 0.4;
+
 export function FadeIn({
   children,
   className,
@@ -42,9 +49,13 @@ export function FadeIn({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: 0.2 }}
+      viewport={{ once, amount: 0, margin: "200px 0px 200px 0px" }}
       variants={getVariants(direction)}
-      transition={{ duration, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{
+        duration,
+        delay: Math.min(delay, MAX_DELAY),
+        ease: [0.21, 0.47, 0.32, 0.98],
+      }}
     >
       {children}
     </motion.div>
