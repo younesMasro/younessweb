@@ -10,19 +10,25 @@ export interface NavItem {
   href: string;
 }
 
-export type PricingEngine = "wordpress" | "custom";
+export type PricingEngine = "essentiel" | "premium";
 
 export interface PricingComparisonRow {
   feature: LocalizedText;
-  wordpress: LocalizedText;
-  custom: LocalizedText;
+  essentiel: LocalizedText;
+  premium: LocalizedText;
 }
 
 export interface PricingPackage {
   id: string;
   engine: PricingEngine;
+  /** Brand name, kept identical across locales on purpose (e.g. "Essentiel"). */
   name: LocalizedText;
+  /** Short one-line positioning statement. */
   purpose: LocalizedText;
+  /** Longer explanatory paragraph shown under the positioning line. */
+  description: LocalizedText;
+  /** Premium-only highlighted value statement. */
+  valueStatement?: LocalizedText;
   price: number;
   currency: "MAD";
   popular: boolean;

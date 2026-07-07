@@ -29,8 +29,8 @@
     "keywords": "web design portfolio, website design examples, professional website projects"
   },
   "PricingMeta": {
-    "title": "Pricing — WordPress vs Custom Coded Website | Youness Web",
-    "description": "Compare the Professional WordPress Website package starting from 2,500 MAD and the Premium Custom Coded Website package starting from 5,000 MAD. Clear, transparent pricing.",
+    "title": "Pricing — Professional Websites That Build Trust | Youness Web",
+    "description": "Compare Essentiel, starting from 2,500 MAD, and Premium Sur-Mesure, starting from 5,000 MAD — two packages designed to build trust, attract clients, and support your business growth.",
     "keywords": "website pricing, professional website cost, WordPress website price, custom website price"
   },
   "ReviewsMeta": {
@@ -40,7 +40,7 @@
   },
   "ContactMeta": {
     "title": "Contact — Start Your Website Today | Youness Web",
-    "description": "Tell us about your business and get help choosing between a Professional WordPress Website and a Premium Custom Coded Website.",
+    "description": "Tell us about your business and get personalized guidance choosing between Essentiel and Premium Sur-Mesure.",
     "keywords": "contact web designer, website project quote, start a website project"
   },
   "Home": {
@@ -77,8 +77,8 @@
     },
     "pricingPreview": {
       "badge": "Pricing",
-      "title": "Two packages, one clear choice",
-      "subtitle": "A professional WordPress website, or a premium custom coded website.",
+      "title": "Invest in a website that builds trust and helps you attract more clients.",
+      "subtitle": "Every project is crafted around your goals. Choose the package that best fits your business stage.",
       "cta": "Compare packages"
     },
     "reviewsPreview": {
@@ -187,25 +187,25 @@
   "PricingPage": {
     "hero": {
       "badge": "Pricing",
-      "title": "Simple, transparent pricing",
-      "subtitle": "Two packages designed to fit different needs — from your first professional website to a fully custom premium experience."
+      "title": "Invest in a website that builds trust and helps you attract more clients.",
+      "subtitle": "Every project is crafted around your goals. Choose the package that best fits your business stage."
     },
     "startingFrom": "Starting from",
-    "popular": "Recommended",
+    "popular": "⭐ Most chosen plan",
     "currency": "MAD",
-    "ctaWordpress": "Choose WordPress Package",
-    "ctaCustom": "Choose Premium Custom Package",
+    "ctaEssentiel": "Get my free quote",
+    "ctaPremium": "Let's discuss your project",
     "comparison": {
-      "title": "WordPress vs Custom Coded",
+      "title": "Which package fits your growth stage?",
       "subtitle": "A quick side-by-side comparison to help you decide.",
-      "feature": "Feature",
-      "wordpress": "WordPress",
-      "custom": "Custom Coded"
+      "feature": "Criteria",
+      "essentiel": "Essentiel",
+      "premium": "Premium Sur-Mesure"
     },
     "helpChoose": {
       "title": "Not sure which package is right for you?",
       "description": "Contact us and we'll help you choose the best solution for your business — no pressure, no obligation.",
-      "cta": "Contact us"
+      "cta": "I want a professional website"
     },
     "faq": {
       "badge": "FAQ",
@@ -214,19 +214,19 @@
       "items": [
         {
           "question": "What's the difference between the two packages?",
-          "answer": "The Professional WordPress Website is built on WordPress — a fast, affordable, and reliable solution for most businesses. The Premium Custom Coded Website is fully custom-built from scratch, offering a unique design, stronger performance, and a more advanced experience."
+          "answer": "Essentiel gives you a professional, easy-to-manage online presence at a clear starting price. Premium Sur-Mesure is a fully custom experience built around your brand — more advanced design, faster performance, and a more immersive experience for businesses that want to stand out."
         },
         {
           "question": "Which package is right for my business?",
-          "answer": "If you need a professional website quickly at a good price, the WordPress package is a great fit. If you want a unique, high-end, ultra-fast website that truly stands out, the Premium Custom Coded package is the better choice. Not sure? Just contact us and we'll help you decide."
+          "answer": "If you're launching your business online and want a professional, reliable website quickly, Essentiel is a great fit. If you want a unique, high-end experience that truly reflects your brand and supports long-term growth, Premium Sur-Mesure is the better choice. Not sure? Just contact us and we'll help you decide."
         },
         {
           "question": "Is hosting included in both packages?",
           "answer": "Yes. Both packages include hosting, a domain name for one full year, and a professional email address."
         },
         {
-          "question": "Can I upgrade from WordPress to a custom website later?",
-          "answer": "Yes. Many clients start with the WordPress package and upgrade to a Premium Custom Coded Website once their business grows."
+          "question": "Can I upgrade from Essentiel to Premium Sur-Mesure later?",
+          "answer": "Yes. Many clients start with Essentiel and move to Premium Sur-Mesure once their business grows."
         },
         {
           "question": "Do I need to pay everything upfront?",
@@ -243,7 +243,14 @@
       "subtitle": "Tell us about your business and let's get started.",
       "cta": "Start your website"
     },
-    "moreFeatures": "+{count} more features included"
+    "moreFeatures": "+{count} more features included",
+    "guarantees": {
+      "freeQuote": "Free quote",
+      "noObligation": "No obligation",
+      "guidance": "Personal guidance before the project starts",
+      "clearSteps": "Clear explanation of every step",
+      "tutorials": "Tutorial videos after delivery"
+    }
   },
   "ReviewsPage": {
     "hero": {
@@ -262,7 +269,7 @@
     "hero": {
       "badge": "Contact",
       "title": "Ready to build a professional website for your business?",
-      "subheadline": "Tell me about your project and I'll help you choose the best website solution — from a professional WordPress website to a premium custom-coded experience.",
+      "subheadline": "Tell me about your project and I'll help you choose the best solution to grow your business online.",
       "trustPoints": {
         "modernDesign": "Modern design",
         "mobileFirst": "Mobile-first experience",
@@ -277,8 +284,8 @@
     },
     "pricing": {
       "badge": "Pricing",
-      "title": "Two packages, one clear choice",
-      "subtitle": "A professional WordPress website, or a premium custom coded website.",
+      "title": "Invest in a website that builds trust and helps you attract more clients.",
+      "subtitle": "Every project is crafted around your goals. Choose the package that best fits your business stage.",
       "cta": "Compare packages"
     },
     "portfolio": {
@@ -316,8 +323,8 @@
       "packageInterest": "Package (optional)",
       "packageInterestPlaceholder": "Select a package",
       "packages": {
-        "wordpress": "Professional WordPress Website — from 2,500 MAD",
-        "custom": "Premium Custom Coded Website — from 5,000 MAD",
+        "essentiel": "Essentiel — from 2,500 MAD",
+        "premium": "Premium Sur-Mesure — from 5,000 MAD",
         "notSure": "I'm not sure, help me choose"
       },
       "comparePackagesLink": "Compare packages here",

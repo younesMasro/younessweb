@@ -29,8 +29,8 @@
     "keywords": "portfolio de création de site web, exemples de sites web professionnels, réalisations de sites web"
   },
   "PricingMeta": {
-    "title": "Tarifs — Site WordPress ou Sur-Mesure | Youness Web",
-    "description": "Comparez la formule Site Web Professionnel WordPress à partir de 2 500 MAD et la formule Site Web Premium Sur-Mesure à partir de 5 000 MAD. Des tarifs clairs et transparents.",
+    "title": "Tarifs — Des sites web professionnels qui inspirent confiance | Youness Web",
+    "description": "Comparez Essentiel, à partir de 2 500 MAD, et Premium Sur-Mesure, à partir de 5 000 MAD — deux formules conçues pour inspirer confiance, attirer des clients et accompagner la croissance de votre entreprise.",
     "keywords": "tarif de site web, prix de création de site web, prix d'un site WordPress, prix d'un site sur-mesure"
   },
   "ReviewsMeta": {
@@ -40,7 +40,7 @@
   },
   "ContactMeta": {
     "title": "Contact — Démarrez Votre Site Aujourd'hui | Youness Web",
-    "description": "Parlez-nous de votre entreprise et faites-vous aider à choisir entre un Site Web Professionnel WordPress et un Site Web Premium Sur-Mesure.",
+    "description": "Parlez-nous de votre entreprise et bénéficiez d'un accompagnement personnalisé pour choisir entre Essentiel et Premium Sur-Mesure.",
     "keywords": "contact développeur web, devis site web, démarrer un projet de site web"
   },
   "Home": {
@@ -77,8 +77,8 @@
     },
     "pricingPreview": {
       "badge": "Tarifs",
-      "title": "Deux formules, un choix clair",
-      "subtitle": "Un site professionnel WordPress, ou un site premium sur-mesure.",
+      "title": "Investissez dans un site web qui inspire confiance et attire plus de clients.",
+      "subtitle": "Chaque projet est réalisé sur mesure selon vos objectifs. Choisissez la formule qui correspond le mieux à votre activité.",
       "cta": "Comparer les formules"
     },
     "reviewsPreview": {
@@ -187,25 +187,25 @@
   "PricingPage": {
     "hero": {
       "badge": "Tarifs",
-      "title": "Des tarifs simples et transparents",
-      "subtitle": "Deux formules pensées pour différents besoins — de votre premier site professionnel à une expérience premium entièrement sur-mesure."
+      "title": "Investissez dans un site web qui inspire confiance et attire plus de clients.",
+      "subtitle": "Chaque projet est réalisé sur mesure selon vos objectifs. Choisissez la formule qui correspond le mieux à votre activité."
     },
     "startingFrom": "À partir de",
-    "popular": "Recommandé",
+    "popular": "⭐ La formule la plus choisie",
     "currency": "MAD",
-    "ctaWordpress": "Choisir la formule WordPress",
-    "ctaCustom": "Choisir la formule Premium Sur-Mesure",
+    "ctaEssentiel": "Obtenir mon devis gratuit",
+    "ctaPremium": "Discutons de votre projet",
     "comparison": {
-      "title": "WordPress ou Sur-Mesure",
+      "title": "Quelle formule correspond à votre étape de croissance ?",
       "subtitle": "Une comparaison rapide pour vous aider à décider.",
       "feature": "Critère",
-      "wordpress": "WordPress",
-      "custom": "Sur-Mesure"
+      "essentiel": "Essentiel",
+      "premium": "Premium Sur-Mesure"
     },
     "helpChoose": {
       "title": "Vous ne savez pas quelle formule choisir ?",
       "description": "Contactez-nous et nous vous aiderons à choisir la meilleure solution pour votre entreprise — sans pression, sans engagement.",
-      "cta": "Nous contacter"
+      "cta": "Je veux un site professionnel"
     },
     "faq": {
       "badge": "FAQ",
@@ -214,19 +214,19 @@
       "items": [
         {
           "question": "Quelle est la différence entre les deux formules ?",
-          "answer": "Le Site Web Professionnel WordPress est construit sur WordPress — une solution rapide, abordable et fiable pour la plupart des entreprises. Le Site Web Premium Sur-Mesure est entièrement codé sur-mesure, avec un design unique, une meilleure performance et une expérience plus avancée."
+          "answer": "Essentiel vous offre une présence en ligne professionnelle et facile à gérer, à un prix de départ clair. Premium Sur-Mesure est une expérience entièrement personnalisée conçue autour de votre marque — un design plus avancé, une performance plus rapide et une expérience plus immersive pour les entreprises qui veulent se démarquer."
         },
         {
           "question": "Quelle formule est adaptée à mon entreprise ?",
-          "answer": "Si vous avez besoin d'un site professionnel rapidement et à un bon prix, la formule WordPress est parfaite. Si vous voulez un site unique, haut de gamme et ultra-rapide qui se démarque vraiment, la formule Premium Sur-Mesure est le meilleur choix. Pas sûr ? Contactez-nous et nous vous aiderons à décider."
+          "answer": "Si vous lancez votre activité en ligne et souhaitez un site professionnel et fiable rapidement, Essentiel est parfait. Si vous voulez une expérience unique et haut de gamme qui reflète vraiment votre marque et accompagne votre croissance à long terme, Premium Sur-Mesure est le meilleur choix. Pas sûr ? Contactez-nous et nous vous aiderons à décider."
         },
         {
           "question": "L'hébergement est-il inclus dans les deux formules ?",
           "answer": "Oui. Les deux formules incluent l'hébergement, un nom de domaine pendant une année complète, et une adresse email professionnelle."
         },
         {
-          "question": "Puis-je passer de WordPress à un site sur-mesure plus tard ?",
-          "answer": "Oui. De nombreux clients commencent avec la formule WordPress puis évoluent vers un Site Web Premium Sur-Mesure lorsque leur entreprise grandit."
+          "question": "Puis-je passer d'Essentiel à Premium Sur-Mesure plus tard ?",
+          "answer": "Oui. De nombreux clients commencent avec Essentiel puis évoluent vers Premium Sur-Mesure lorsque leur entreprise grandit."
         },
         {
           "question": "Dois-je tout payer à l'avance ?",
@@ -243,7 +243,14 @@
       "subtitle": "Parlez-nous de votre entreprise et lançons votre projet.",
       "cta": "Démarrer mon site"
     },
-    "moreFeatures": "+{count} fonctionnalités supplémentaires incluses"
+    "moreFeatures": "+{count} fonctionnalités supplémentaires incluses",
+    "guarantees": {
+      "freeQuote": "Devis gratuit",
+      "noObligation": "Aucune obligation",
+      "guidance": "Accompagnement personnalisé avant le début du projet",
+      "clearSteps": "Explication claire de chaque étape",
+      "tutorials": "Vidéos tutoriels après livraison"
+    }
   },
   "ReviewsPage": {
     "hero": {
@@ -262,7 +269,7 @@
     "hero": {
       "badge": "Contact",
       "title": "Prêt à créer un site web professionnel pour votre entreprise ?",
-      "subheadline": "Parlez-moi de votre projet et je vous aiderai à choisir la meilleure solution — d'un site professionnel WordPress à une expérience premium sur-mesure.",
+      "subheadline": "Parlez-moi de votre projet et je vous aiderai à choisir la meilleure solution pour développer votre activité en ligne.",
       "trustPoints": {
         "modernDesign": "Design moderne",
         "mobileFirst": "Expérience mobile-first",
@@ -277,8 +284,8 @@
     },
     "pricing": {
       "badge": "Tarifs",
-      "title": "Deux formules, un choix clair",
-      "subtitle": "Un site professionnel WordPress, ou un site premium sur-mesure.",
+      "title": "Investissez dans un site web qui inspire confiance et attire plus de clients.",
+      "subtitle": "Chaque projet est réalisé sur mesure selon vos objectifs. Choisissez la formule qui correspond le mieux à votre activité.",
       "cta": "Comparer les formules"
     },
     "portfolio": {
@@ -316,8 +323,8 @@
       "packageInterest": "Formule (optionnel)",
       "packageInterestPlaceholder": "Sélectionnez une formule",
       "packages": {
-        "wordpress": "Site Web Professionnel WordPress — à partir de 2 500 MAD",
-        "custom": "Site Web Premium Sur-Mesure — à partir de 5 000 MAD",
+        "essentiel": "Essentiel — à partir de 2 500 MAD",
+        "premium": "Premium Sur-Mesure — à partir de 5 000 MAD",
         "notSure": "Je ne suis pas sûr, aidez-moi à choisir"
       },
       "comparePackagesLink": "Comparez les formules ici",

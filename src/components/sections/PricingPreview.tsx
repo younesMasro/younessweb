@@ -6,6 +6,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { PricingCards } from "@/components/sections/PricingCards";
+import { TrustGuarantees } from "@/components/shared/TrustGuarantees";
 
 export function PricingPreview({
   namespace = "Home.pricingPreview",
@@ -41,6 +42,7 @@ export function PricingPreview({
         </div>
 
         <PricingCards featureLimit={featureLimit} showStartProject={showStartProject} />
+        <TrustGuarantees />
 
         <FadeIn delay={0.2}>
           <div className="mt-12 text-center">

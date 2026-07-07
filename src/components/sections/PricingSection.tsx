@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { pricingComparisonRows } from "@/config/pricing";
 import { PricingCards } from "@/components/sections/PricingCards";
+import { TrustGuarantees } from "@/components/shared/TrustGuarantees";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
@@ -35,6 +36,7 @@ export function PricingSection() {
         </div>
 
         <PricingCards />
+        <TrustGuarantees />
 
         <FadeIn delay={0.3}>
           <div className="mx-auto mt-20 max-w-4xl text-center">
@@ -56,10 +58,10 @@ export function PricingSection() {
                     {t("comparison.feature")}
                   </th>
                   <th className="p-4 text-left font-medium text-primary">
-                    {t("comparison.wordpress")}
+                    {t("comparison.essentiel")}
                   </th>
                   <th className="p-4 text-left font-medium text-secondary">
-                    {t("comparison.custom")}
+                    {t("comparison.premium")}
                   </th>
                 </tr>
               </thead>
@@ -76,10 +78,10 @@ export function PricingSection() {
                       {row.feature[locale]}
                     </td>
                     <td className="p-4 text-muted-foreground">
-                      {row.wordpress[locale]}
+                      {row.essentiel[locale]}
                     </td>
                     <td className="p-4 text-muted-foreground">
-                      {row.custom[locale]}
+                      {row.premium[locale]}
                     </td>
                   </tr>
                 ))}

@@ -30,7 +30,7 @@ const websiteTypeKeys = [
   "other",
 ] as const;
 
-const packageKeys = ["wordpress", "custom", "notSure"] as const;
+const packageKeys = ["essentiel", "premium", "notSure"] as const;
 const domainStatusKeys = ["yes", "no", "notSure"] as const;
 
 export function ContactForm() {
@@ -41,7 +41,7 @@ export function ContactForm() {
 
   const preselectedPackage = searchParams.get("package");
   const defaultPackage =
-    preselectedPackage === "wordpress" || preselectedPackage === "custom"
+    preselectedPackage === "essentiel" || preselectedPackage === "premium"
       ? preselectedPackage
       : "";
 

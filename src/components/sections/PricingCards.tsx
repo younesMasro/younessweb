@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { Check, Sparkles } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -43,8 +43,7 @@ export function PricingCards({
               )}
             >
               {pkg.popular && (
-                <Badge className="glow-purple absolute -top-3.5 left-8 gap-1 bg-secondary text-secondary-foreground">
-                  <Sparkles className="size-3.5" />
+                <Badge className="glow-purple absolute -top-3.5 left-8 bg-secondary text-secondary-foreground">
                   {t("popular")}
                 </Badge>
               )}
@@ -52,9 +51,17 @@ export function PricingCards({
               <h3 className="text-lg font-semibold sm:text-xl">
                 {pkg.name[locale]}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 text-sm font-medium text-foreground/80">
                 {pkg.purpose[locale]}
               </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {pkg.description[locale]}
+              </p>
+              {pkg.valueStatement && (
+                <p className="mt-3 rounded-xl border border-secondary/30 bg-secondary/10 px-3.5 py-2.5 text-sm font-medium text-foreground/90">
+                  {pkg.valueStatement[locale]}
+                </p>
+              )}
 
               <div className="mt-5 flex items-baseline gap-2">
                 <span className="text-xs text-muted-foreground">
@@ -99,16 +106,17 @@ export function PricingCards({
                   asChild
                   size="lg"
                   className={cn(
-                    "h-12 rounded-full",
+                    "group h-12 rounded-full",
                     pkg.popular
                       ? "glow-purple bg-secondary text-secondary-foreground hover:bg-secondary/90"
                       : "glow-cyan bg-primary text-primary-foreground hover:bg-primary/90",
                   )}
                 >
                   <Link href={`/contact?package=${pkg.engine}`}>
-                    {pkg.engine === "wordpress"
-                      ? t("ctaWordpress")
-                      : t("ctaCustom")}
+                    {pkg.engine === "essentiel"
+                      ? t("ctaEssentiel")
+                      : t("ctaPremium")}
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
                 {showStartProject && (
