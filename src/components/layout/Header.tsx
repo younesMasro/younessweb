@@ -33,8 +33,11 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "py-3" : "py-5",
+        "fixed inset-x-0 z-50 transition-all duration-300",
+        // Collapses up to top-0 once scrolled past the announcement bar
+        // above it, so the header reclaims that space instead of leaving
+        // a permanent gap.
+        scrolled ? "top-0 py-3" : "top-9 py-5 sm:top-10",
       )}
     >
       <div

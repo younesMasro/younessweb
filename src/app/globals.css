@@ -199,6 +199,19 @@
     }
   }
 
+  /* Tells the browser these elements only ever tap/click (no pinch-zoom or
+     double-tap-zoom gesture is meaningful on them), letting it dispatch the
+     click without waiting out the usual double-tap-zoom detection delay. */
+  @media (max-width: 767px) {
+    button,
+    a,
+    input,
+    select,
+    textarea {
+      touch-action: manipulation;
+    }
+  }
+
   /* Backdrop blur is one of the most expensive paint operations on mobile
      GPUs, especially under a fixed header repainted every scroll frame.
      Trim it on small screens; desktop keeps the full glass effect. */
@@ -284,6 +297,14 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .route-progress-bar {
+    background-image: linear-gradient(
+      90deg,
+      oklch(0.78 0.16 220),
+      oklch(0.62 0.24 300)
+    );
   }
 
   .mask-fade-x {

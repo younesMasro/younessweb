@@ -13,6 +13,11 @@
     "contact": "Contact",
     "cta": "Démarrer mon site"
   },
+  "AnnouncementBar": {
+    "text": "Votre prochain client peut commencer par votre site web.",
+    "textShort": "Votre prochain client peut commencer ici.",
+    "cta": "Obtenir mon devis gratuit"
+  },
   "HomeMeta": {
     "title": "Youness Web — Studio de création de sites web modernes",
     "description": "Youness Web conçoit des sites web premium, modernes et orientés conversion pour les entreprises, marques, boutiques et entrepreneurs. Création de sites vitrines, e-commerce et landing pages qui transforment vos visiteurs en clients.",

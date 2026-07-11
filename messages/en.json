@@ -13,6 +13,11 @@
     "contact": "Contact",
     "cta": "Start your website"
   },
+  "AnnouncementBar": {
+    "text": "Your next client could start with your website.",
+    "textShort": "Your next client starts here.",
+    "cta": "Get my free quote"
+  },
   "HomeMeta": {
     "title": "Youness Web — Modern Website Design Studio",
     "description": "Youness Web creates premium, modern, conversion-focused websites for businesses, brands, stores, and entrepreneurs. Professional website design, e-commerce, and landing pages that turn visitors into clients.",

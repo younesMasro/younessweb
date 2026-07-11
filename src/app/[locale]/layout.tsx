@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Cairo, Manrope, Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
@@ -7,9 +8,12 @@ import { Analytics } from "@vercel/analytics/next";
 import { routing } from "@/i18n/routing";
 import { buildMetadata, localBusinessJsonLd } from "@/lib/seo";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingSupportWidget } from "@/components/shared/FloatingSupportWidget";
+import { RouteProgressBar } from "@/components/shared/RouteProgressBar";
+import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import "../globals.css";
 
 const manrope = Manrope({
@@ -74,7 +78,12 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <NextIntlClientProvider messages={messages}>
+          <Suspense fallback={null}>
+            <RouteProgressBar />
+            <ScrollToTop />
+          </Suspense>
           <SmoothScrollProvider>
+            <AnnouncementBar />
             <Header />
             <main>{children}</main>
             <Footer />
