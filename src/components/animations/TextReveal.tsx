@@ -28,6 +28,7 @@ export function TextReveal({
       {words.map((word, i) => (
         <span key={i} className="inline-block overflow-hidden align-top">
           <motion.span
+            data-motion-reveal
             className="inline-block"
             variants={{
               hidden: { y: "110%", opacity: 0 },

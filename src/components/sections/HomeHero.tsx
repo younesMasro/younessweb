@@ -1,8 +1,8 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
@@ -16,17 +16,15 @@ export function HomeHero() {
     <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
       <div className="bg-grid bg-grid-fade pointer-events-none absolute inset-0" />
 
-      <motion.div
+      <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-glow-purple/25 blur-[120px]"
-        animate={{ opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="animate-glow-pulse pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-glow-purple/25 blur-[120px]"
+        style={{ "--glow-pulse-min": 0.4, "--glow-pulse-max": 0.7 } as CSSProperties}
       />
-      <motion.div
+      <div
         aria-hidden
-        className="pointer-events-none absolute top-1/3 right-0 h-80 w-80 rounded-full bg-glow-cyan/25 blur-[110px]"
-        animate={{ opacity: [0.5, 0.8, 0.5] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="animate-glow-pulse pointer-events-none absolute top-1/3 right-0 h-80 w-80 rounded-full bg-glow-cyan/25 blur-[110px]"
+        style={{ "--glow-pulse-min": 0.5, "--glow-pulse-max": 0.8, "--glow-pulse-delay": "1s" } as CSSProperties}
       />
 
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">

@@ -136,6 +136,12 @@
   html {
     color-scheme: dark;
     scroll-behavior: smooth;
+    /* Painted before hydration/CSS-in-JS settles and revealed during iOS
+       rubber-band overscroll — must match body's base color or mobile
+       Safari flashes white at the top/bottom edges while scrolling. */
+    background-color: var(--background);
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
@@ -155,11 +161,60 @@
         transparent
       );
     background-repeat: no-repeat;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  main {
+    overflow-x: hidden;
   }
 
   ::selection {
     background: oklch(0.78 0.16 220 / 30%);
     color: var(--foreground);
+  }
+
+  /* Scroll-reveal animations (FadeIn/TextReveal) render their "hidden"
+     state (opacity: 0) in the server HTML and only become visible once
+     Framer Motion hydrates and its IntersectionObserver fires. On a slow
+     mobile connection/CPU that gap is long enough to read as a blank or
+     "black" page with unclickable content. Force everything visible
+     immediately on mobile and for reduced-motion users; desktop keeps the
+     full reveal animation since hydration is fast there. */
+  @media (max-width: 767px), (prefers-reduced-motion: reduce) {
+    [data-motion-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Backdrop blur is one of the most expensive paint operations on mobile
+     GPUs, especially under a fixed header repainted every scroll frame.
+     Trim it on small screens; desktop keeps the full glass effect. */
+  @media (max-width: 767px) {
+    .glass {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    .glow-cyan {
+      box-shadow: 0 0 32px -10px oklch(0.78 0.16 220 / 40%);
+    }
+
+    .glow-purple {
+      box-shadow: 0 0 32px -10px oklch(0.62 0.24 300 / 40%);
+    }
   }
 }
 
@@ -259,5 +314,23 @@
 
   .animate-marquee {
     animation: marquee 36s linear infinite;
+  }
+
+  /* Decorative ambient glow blobs — pure CSS instead of a Framer Motion
+     rAF loop so they cost nothing on the main thread (helps mobile scroll
+     smoothness) and render immediately without waiting on JS hydration. */
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: var(--glow-pulse-min, 0.4);
+    }
+    50% {
+      opacity: var(--glow-pulse-max, 0.7);
+    }
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 8s ease-in-out infinite;
+    animation-delay: var(--glow-pulse-delay, 0s);
   }
 }

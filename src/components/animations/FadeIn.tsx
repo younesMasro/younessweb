@@ -46,6 +46,7 @@ export function FadeIn({
 }: FadeInProps) {
   return (
     <motion.div
+      data-motion-reveal
       className={className}
       initial="hidden"
       whileInView="visible"
