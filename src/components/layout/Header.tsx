@@ -85,7 +85,12 @@ export function Header() {
           <LanguageSwitcher />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Menu">
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Menu"
+                className="size-11 lg:size-9"
+              >
                 <Menu className="size-5" />
               </Button>
             </SheetTrigger>

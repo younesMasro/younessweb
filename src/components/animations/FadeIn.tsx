@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface FadeInProps {
   children: ReactNode;
@@ -44,6 +45,16 @@ export function FadeIn({
   direction = "up",
   once = true,
 }: FadeInProps) {
+  const isMobile = useIsMobile();
+
+  // Scroll-triggered reveal costs an IntersectionObserver per instance and
+  // depends on Framer Motion hydrating before content becomes visible —
+  // both are liabilities on mobile (CPU headroom, slow hydration). Render
+  // content plainly and immediately instead; desktop keeps the animation.
+  if (isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       data-motion-reveal

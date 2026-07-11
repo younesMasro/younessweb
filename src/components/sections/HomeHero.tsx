@@ -18,12 +18,12 @@ export function HomeHero() {
 
       <div
         aria-hidden
-        className="animate-glow-pulse pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-glow-purple/25 blur-[120px]"
+        className="animate-glow-pulse pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-glow-purple/25 blur-3xl sm:blur-[120px]"
         style={{ "--glow-pulse-min": 0.4, "--glow-pulse-max": 0.7 } as CSSProperties}
       />
       <div
         aria-hidden
-        className="animate-glow-pulse pointer-events-none absolute top-1/3 right-0 h-80 w-80 rounded-full bg-glow-cyan/25 blur-[110px]"
+        className="animate-glow-pulse pointer-events-none absolute top-1/3 right-0 h-80 w-80 rounded-full bg-glow-cyan/25 blur-3xl sm:blur-[110px]"
         style={{ "--glow-pulse-min": 0.5, "--glow-pulse-max": 0.8, "--glow-pulse-delay": "1s" } as CSSProperties}
       />
 

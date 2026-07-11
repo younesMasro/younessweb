@@ -31,7 +31,7 @@ export function LanguageSwitcher() {
         <Button
           variant="ghost"
           size="sm"
-          className="gap-1.5 text-foreground/80 hover:text-foreground"
+          className="h-11 gap-1.5 text-foreground/80 hover:text-foreground lg:h-8"
           aria-label={t(locale)}
         >
           <Globe className="size-4" />

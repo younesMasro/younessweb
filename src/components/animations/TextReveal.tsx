@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface TextRevealProps {
   text: string;
@@ -16,6 +17,15 @@ export function TextReveal({
   delay = 0,
   wordDelay = 0.06,
 }: TextRevealProps) {
+  const isMobile = useIsMobile();
+
+  // This wraps the hero H1 — the single most important thing to have
+  // visible on first paint. Skip the per-word split/observer/animation
+  // machinery on mobile entirely and just render the text.
+  if (isMobile) {
+    return <span className={className}>{text}</span>;
+  }
+
   const words = text.split(" ");
 
   return (
