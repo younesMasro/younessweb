@@ -51,12 +51,12 @@ export function HeroConversionCard() {
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          <div className="grid grid-cols-2 gap-2.5">
+          <div className="flex flex-wrap gap-2.5">
             <Button
               asChild
               variant="outline"
               size="sm"
-              className="rounded-full border-white/15 hover:bg-white/10"
+              className="grow shrink-0 basis-auto rounded-full border-white/15 hover:bg-white/10"
             >
               <Link href="/services">{t("ctaServices")}</Link>
             </Button>
@@ -64,7 +64,7 @@ export function HeroConversionCard() {
               asChild
               variant="outline"
               size="sm"
-              className="rounded-full border-white/15 hover:bg-white/10"
+              className="grow shrink-0 basis-auto rounded-full border-white/15 hover:bg-white/10"
             >
               <Link href="/portfolio">{t("ctaPortfolio")}</Link>
             </Button>
