@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/contact-schema";
+import {
+  localeFromReferer,
+  sendLeadToWordPress,
+  utmFromReferer,
+} from "@/lib/wp-leads";
 
 const DEFAULT_TO_EMAIL = "younes.masroure@gmail.com";
 
@@ -79,6 +84,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true });
   }
 
+  // Save the lead to the WordPress CRM ("Demandes clients"). Best-effort and
+  // fire-and-forget relative to the email: a CRM outage must not cost a lead.
+  const referer = request.headers.get("referer");
+  const wpResult = await sendLeadToWordPress(data, {
+    locale: localeFromReferer(referer),
+    referer: referer || "",
+    ip:
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      request.headers.get("x-real-ip") ||
+      "",
+    ...utmFromReferer(referer),
+  });
+
   const toEmail = process.env.CONTACT_TO_EMAIL || DEFAULT_TO_EMAIL;
   const subject = `New website request from ${data.fullName}`;
   const text = buildEmailBody(data);
@@ -98,12 +116,31 @@ export async function POST(request: Request) {
         toEmail,
         JSON.stringify({ ...data, company_website: undefined }),
       );
-      return NextResponse.json({ success: true, emailSent: false });
+      return NextResponse.json({
+        success: true,
+        emailSent: false,
+        savedToCrm: wpResult.ok,
+      });
     }
 
-    return NextResponse.json({ success: true, emailSent: true });
+    return NextResponse.json({
+      success: true,
+      emailSent: true,
+      savedToCrm: wpResult.ok,
+    });
   } catch (error) {
     console.error("[contact] Failed to send email:", error);
+
+    // The email failed, but if the lead reached the CRM it is not lost —
+    // don't show the visitor an error and make them submit twice.
+    if (wpResult.ok) {
+      return NextResponse.json({
+        success: true,
+        emailSent: false,
+        savedToCrm: true,
+      });
+    }
+
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 502 },
