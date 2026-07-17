@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import NextLink from "next/link";
 import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -72,6 +73,15 @@ export function Header() {
               {t(item.key)}
             </Link>
           ))}
+          <NextLink
+            href="/blog"
+            className={cn(
+              "rounded-full px-4 py-2 text-sm font-medium transition-colors hover:text-foreground",
+              pathname === "/blog" ? "text-foreground" : "text-foreground/70",
+            )}
+          >
+            {t("blog")}
+          </NextLink>
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
@@ -110,6 +120,13 @@ export function Header() {
                     {t(item.key)}
                   </Link>
                 ))}
+                <NextLink
+                  href="/blog"
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-3 py-3 text-base font-medium text-foreground/80 hover:bg-white/5 hover:text-foreground"
+                >
+                  {t("blog")}
+                </NextLink>
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}

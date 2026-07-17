@@ -6,7 +6,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
 import { routing } from "@/i18n/routing";
-import { buildMetadata, localBusinessJsonLd } from "@/lib/seo";
+import { buildMetadata, localBusinessJsonLd, organizationJsonLd } from "@/lib/seo";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
@@ -63,6 +63,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const dir = locale === "ar" ? "rtl" : "ltr";
   const jsonLd = localBusinessJsonLd(locale);
+  const orgJsonLd = organizationJsonLd();
 
   return (
     <html
@@ -76,6 +77,10 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
         <NextIntlClientProvider messages={messages}>
           <Suspense fallback={null}>

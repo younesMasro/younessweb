@@ -2,7 +2,7 @@ const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 
 export const siteConfig = {
   name: "Youness Web",
-  url: "https://younessweb.me",
+  url: "https://www.younessweb.com",
   description: {
     en: "Youness Web creates premium, modern, conversion-focused websites for businesses, brands, stores, and entrepreneurs.",
     fr: "Youness Web conçoit des sites web premium, modernes et orientés conversion pour les entreprises, marques, boutiques et entrepreneurs.",

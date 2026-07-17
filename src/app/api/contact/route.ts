@@ -53,7 +53,7 @@ async function sendViaResend(toEmail: string, subject: string, text: string, rep
   const { Resend } = await import("resend");
   const resend = new Resend(apiKey);
   await resend.emails.send({
-    from: "Youness Web <onboarding@resend.dev>",
+    from: "Youness Web <leads@younessweb.com>",
     to: toEmail,
     ...(replyTo ? { replyTo } : {}),
     subject,
