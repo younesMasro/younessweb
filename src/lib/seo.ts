@@ -144,6 +144,7 @@ export function articleJsonLd({
   datePublished,
   dateModified,
   author,
+  locale,
 }: {
   title: string;
   description: string;
@@ -152,8 +153,9 @@ export function articleJsonLd({
   datePublished: string;
   dateModified?: string;
   author: string;
+  locale: Locale;
 }) {
-  const url = `${siteConfig.url}/blog/${slug}`;
+  const url = localizedUrl(locale, `/blog/${slug}`);
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -176,7 +178,7 @@ export function articleJsonLd({
         url: `${siteConfig.url}/images/logo/LogoIcon.png`,
       },
     },
-    inLanguage: "fr",
+    inLanguage: locale,
   };
 }
 

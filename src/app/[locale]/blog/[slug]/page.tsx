@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { hasLocale } from "next-intl";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import { Clock } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { routing, defaultLocale, type Locale } from "@/i18n/routing";
+import { localizedUrl, articleJsonLd } from "@/lib/seo";
 import {
   getAllPostSlugs,
   getPostBySlug,
   getRelatedPosts,
 } from "@/lib/blog";
-import { articleJsonLd } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
 import { mdxComponents } from "@/components/blog/MdxComponents";
 import { TableOfContents } from "@/components/blog/TableOfContents";
@@ -21,13 +23,21 @@ import { Breadcrumbs } from "@/components/blog/Breadcrumbs";
 import { PageCtaBanner } from "@/components/shared/PageCtaBanner";
 
 export function generateStaticParams() {
-  return getAllPostSlugs().map((slug) => ({ locale: "fr", slug }));
+  return routing.locales.flatMap((locale) =>
+    getAllPostSlugs(locale).map((slug) => ({ locale, slug })),
+  );
 }
 
 export const dynamicParams = false;
 
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("fr-FR", {
+const dateLocales: Record<Locale, string> = {
+  fr: "fr-FR",
+  en: "en-US",
+  ar: "ar-MA",
+};
+
+function formatDate(date: string, locale: Locale) {
+  return new Date(date).toLocaleDateString(dateLocales[locale], {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -37,25 +47,36 @@ function formatDate(date: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const { locale: raw, slug } = await params;
+  const locale = (hasLocale(routing.locales, raw) ? raw : defaultLocale) as Locale;
+  const post = getPostBySlug(locale, slug);
   if (!post) return {};
 
-  const canonical = `${siteConfig.url}/blog/${slug}`;
+  const canonical = localizedUrl(locale, `/blog/${slug}`);
+
+  const languages: Record<string, string> = {};
+  for (const loc of routing.locales) {
+    if (getPostBySlug(loc, slug)) {
+      languages[loc] = localizedUrl(loc, `/blog/${slug}`);
+    }
+  }
+  if (languages[defaultLocale]) {
+    languages["x-default"] = languages[defaultLocale];
+  }
 
   return {
     title: post.title,
     description: post.description,
     keywords: post.keywords,
-    alternates: { canonical },
+    alternates: { canonical, languages },
     openGraph: {
       title: post.title,
       description: post.description,
       url: canonical,
       siteName: siteConfig.name,
-      locale: "fr",
+      locale,
       type: "article",
       publishedTime: post.date,
       modifiedTime: post.updatedDate || post.date,
@@ -77,13 +98,15 @@ export default async function BlogPostPage({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale, slug } = await params;
+  const { locale: raw, slug } = await params;
+  const locale = (hasLocale(routing.locales, raw) ? raw : defaultLocale) as Locale;
   setRequestLocale(locale);
 
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(locale, slug);
   if (!post) notFound();
 
-  const related = getRelatedPosts(post);
+  const t = await getTranslations({ locale, namespace: "Blog" });
+  const related = getRelatedPosts(locale, post);
   const jsonLd = articleJsonLd({
     title: post.title,
     description: post.description,
@@ -92,6 +115,7 @@ export default async function BlogPostPage({
     datePublished: post.date,
     dateModified: post.updatedDate,
     author: post.author,
+    locale,
   });
 
   return (
@@ -104,8 +128,8 @@ export default async function BlogPostPage({
       <div className="mx-auto max-w-3xl px-6">
         <Breadcrumbs
           items={[
-            { name: "Accueil", href: "/" },
-            { name: "Blog", href: "/blog" },
+            { name: t("breadcrumbHome"), href: "/" },
+            { name: t("breadcrumbBlog"), href: "/blog" },
             { name: post.title, href: `/blog/${post.slug}` },
           ]}
         />
@@ -122,11 +146,11 @@ export default async function BlogPostPage({
           <div className="mt-6 flex flex-wrap items-center gap-4 border-y border-border py-4 text-sm text-muted-foreground">
             <span className="font-medium text-foreground">{post.author}</span>
             <span aria-hidden>&bull;</span>
-            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <time dateTime={post.date}>{formatDate(post.date, locale)}</time>
             <span aria-hidden>&bull;</span>
             <span className="inline-flex items-center gap-1">
               <Clock className="size-3.5" />
-              {post.readingTimeMinutes} min de lecture
+              {post.readingTimeMinutes} {t("minRead")}
             </span>
           </div>
         </div>
@@ -171,7 +195,7 @@ export default async function BlogPostPage({
           )}
         </div>
 
-        <RelatedPosts posts={related} />
+        <RelatedPosts posts={related} locale={locale} />
       </div>
 
       <div className="mt-16">

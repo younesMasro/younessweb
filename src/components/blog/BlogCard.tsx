@@ -1,18 +1,28 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "@/i18n/navigation";
 import type { PostSummary } from "@/lib/blog";
+import type { Locale } from "@/i18n/routing";
 
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("fr-FR", {
+const dateLocales: Record<Locale, string> = {
+  fr: "fr-FR",
+  en: "en-US",
+  ar: "ar-MA",
+};
+
+function formatDate(date: string, locale: Locale) {
+  return new Date(date).toLocaleDateString(dateLocales[locale], {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
 }
 
-export function BlogCard({ post }: { post: PostSummary }) {
+export function BlogCard({ post, locale }: { post: PostSummary; locale: Locale }) {
+  const t = useTranslations("Blog");
+
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -38,11 +48,11 @@ export function BlogCard({ post }: { post: PostSummary }) {
           {post.description}
         </p>
         <div className="mt-auto flex items-center gap-3 pt-2 text-xs text-muted-foreground">
-          <span>{formatDate(post.date)}</span>
+          <span>{formatDate(post.date, locale)}</span>
           <span aria-hidden>&bull;</span>
           <span className="inline-flex items-center gap-1">
             <Clock className="size-3.5" />
-            {post.readingTimeMinutes} min de lecture
+            {post.readingTimeMinutes} {t("minRead")}
           </span>
         </div>
       </div>

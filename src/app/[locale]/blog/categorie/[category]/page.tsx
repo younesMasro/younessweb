@@ -1,40 +1,43 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { hasLocale } from "next-intl";
 import { siteConfig } from "@/config/site";
+import { routing, defaultLocale, type Locale } from "@/i18n/routing";
 import { getAllCategories, getPostsByCategory, slugify } from "@/lib/blog";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { Breadcrumbs } from "@/components/blog/Breadcrumbs";
 
 export function generateStaticParams() {
-  return getAllCategories().map((category) => ({
-    locale: "fr",
-    category: slugify(category),
-  }));
+  return routing.locales.flatMap((locale) =>
+    getAllCategories(locale).map((category) => ({
+      locale,
+      category: slugify(category),
+    })),
+  );
 }
 
 export const dynamicParams = false;
 
-function findCategory(categorySlug: string) {
-  return getAllCategories().find((c) => slugify(c) === categorySlug) || null;
+function findCategory(locale: Locale, categorySlug: string) {
+  return getAllCategories(locale).find((c) => slugify(c) === categorySlug) || null;
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ category: string }>;
+  params: Promise<{ locale: string; category: string }>;
 }): Promise<Metadata> {
-  const { category: categorySlug } = await params;
-  const category = findCategory(categorySlug);
+  const { locale: raw, category: categorySlug } = await params;
+  const locale = (hasLocale(routing.locales, raw) ? raw : defaultLocale) as Locale;
+  const category = findCategory(locale, categorySlug);
   if (!category) return {};
 
-  const title = `${category} — Blog Youness Web`;
-  const description = `Tous les articles Youness Web sur ${category}.`;
-  const canonical = `${siteConfig.url}/blog/categorie/${categorySlug}`;
+  const title = `${category} — Youness Web`;
+  const canonical = `${siteConfig.url}${locale === defaultLocale ? "" : `/${locale}`}/blog/categorie/${categorySlug}`;
 
   return {
     title,
-    description,
     alternates: { canonical },
     robots: { index: true, follow: true },
   };
@@ -45,21 +48,23 @@ export default async function BlogCategoryPage({
 }: {
   params: Promise<{ locale: string; category: string }>;
 }) {
-  const { locale, category: categorySlug } = await params;
+  const { locale: raw, category: categorySlug } = await params;
+  const locale = (hasLocale(routing.locales, raw) ? raw : defaultLocale) as Locale;
   setRequestLocale(locale);
 
-  const category = findCategory(categorySlug);
+  const category = findCategory(locale, categorySlug);
   if (!category) notFound();
 
-  const posts = getPostsByCategory(category);
+  const t = await getTranslations({ locale, namespace: "Blog" });
+  const posts = getPostsByCategory(locale, category);
 
   return (
     <div className="pt-32 pb-24">
       <div className="mx-auto max-w-6xl px-6">
         <Breadcrumbs
           items={[
-            { name: "Accueil", href: "/" },
-            { name: "Blog", href: "/blog" },
+            { name: t("breadcrumbHome"), href: "/" },
+            { name: t("breadcrumbBlog"), href: "/blog" },
             { name: category, href: `/blog/categorie/${categorySlug}` },
           ]}
         />
@@ -68,7 +73,7 @@ export default async function BlogCategoryPage({
         </h1>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+            <BlogCard key={post.slug} post={post} locale={locale} />
           ))}
         </div>
       </div>

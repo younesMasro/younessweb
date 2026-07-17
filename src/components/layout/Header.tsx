@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import NextLink from "next/link";
 import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -18,7 +17,7 @@ import {
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { cn } from "@/lib/utils";
 
-export function Header() {
+export function Header({ frenchOnlySlugs }: { frenchOnlySlugs: string[] }) {
   const t = useTranslations("Nav");
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -73,7 +72,7 @@ export function Header() {
               {t(item.key)}
             </Link>
           ))}
-          <NextLink
+          <Link
             href="/blog"
             className={cn(
               "rounded-full px-4 py-2 text-sm font-medium transition-colors hover:text-foreground",
@@ -81,11 +80,11 @@ export function Header() {
             )}
           >
             {t("blog")}
-          </NextLink>
+          </Link>
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <LanguageSwitcher />
+          <LanguageSwitcher frenchOnlySlugs={frenchOnlySlugs} />
           <Button
             asChild
             className="glow-cyan bg-primary text-primary-foreground hover:bg-primary/90"
@@ -95,7 +94,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <LanguageSwitcher />
+          <LanguageSwitcher frenchOnlySlugs={frenchOnlySlugs} />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button
@@ -120,13 +119,13 @@ export function Header() {
                     {t(item.key)}
                   </Link>
                 ))}
-                <NextLink
+                <Link
                   href="/blog"
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-3 py-3 text-base font-medium text-foreground/80 hover:bg-white/5 hover:text-foreground"
                 >
                   {t("blog")}
-                </NextLink>
+                </Link>
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}

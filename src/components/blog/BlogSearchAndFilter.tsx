@@ -1,20 +1,25 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { cn } from "@/lib/utils";
 import type { PostSummary } from "@/lib/blog";
+import type { Locale } from "@/i18n/routing";
 
 export function BlogSearchAndFilter({
   posts,
   categories,
+  locale,
 }: {
   posts: PostSummary[];
   categories: string[];
+  locale: Locale;
 }) {
+  const t = useTranslations("Blog");
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
@@ -41,9 +46,9 @@ export function BlogSearchAndFilter({
           <Input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Rechercher un article..."
+            placeholder={t("searchPlaceholder")}
             className="pl-9"
-            aria-label="Rechercher un article de blog"
+            aria-label={t("searchPlaceholder")}
           />
         </div>
 
@@ -56,7 +61,7 @@ export function BlogSearchAndFilter({
                 activeCategory === null && "glow-cyan",
               )}
             >
-              Tous
+              {t("allCategories")}
             </Badge>
           </button>
           {categories.map((category) => (
@@ -82,13 +87,11 @@ export function BlogSearchAndFilter({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-12 text-center text-muted-foreground">
-          Aucun article ne correspond à votre recherche.
-        </p>
+        <p className="mt-12 text-center text-muted-foreground">{t("noResults")}</p>
       ) : (
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+            <BlogCard key={post.slug} post={post} locale={locale} />
           ))}
         </div>
       )}

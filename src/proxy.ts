@@ -4,13 +4,14 @@ import { routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
-// The blog and the local-SEO landing pages (/creation-site-web-*) only
-// exist in French — see content/blog and src/config/cities.ts. A stray
-// link to /en/blog or /ar/creation-site-web-maroc (an old bookmark, a
-// shared URL, a search engine that indexed it before this fix) should
-// land the visitor on the real French page instead of a 404.
+// The local-SEO landing pages (/creation-site-web-*) only exist in French
+// — see src/config/cities.ts. A stray link to /en/creation-site-web-maroc
+// (an old bookmark, a shared URL, a search engine that indexed it before
+// this fix) should land the visitor on the real French page instead of a
+// 404. The blog is now fully translated (content/blog/{fr,en,ar}), so it
+// no longer needs this treatment.
 function isFrenchOnlyPath(pathname: string) {
-  return pathname === "/blog" || pathname.startsWith("/blog/") || pathname.startsWith("/creation-site-web-");
+  return pathname.startsWith("/creation-site-web-");
 }
 
 export default function proxy(request: NextRequest) {

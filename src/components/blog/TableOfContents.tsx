@@ -1,18 +1,20 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import type { TocItem } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 
 export function TableOfContents({ items }: { items: TocItem[] }) {
+  const t = useTranslations("Blog");
   if (items.length === 0) return null;
 
   return (
     <nav
-      aria-label="Table des matières"
+      aria-label={t("tableOfContents")}
       className="rounded-2xl border border-border bg-card p-5"
     >
       <p className="text-sm font-semibold text-foreground">
-        Table des matières
+        {t("tableOfContents")}
       </p>
       <ul className="mt-3 space-y-2 text-sm">
         {items.map((item) => (

@@ -1,6 +1,15 @@
-import Link from "next/link";
+import NextLink from "next/link";
 import Image from "next/image";
 import type { MDXComponents } from "mdx/types";
+import { Link } from "@/i18n/navigation";
+
+// The local-SEO landing pages (/creation-site-web-*) only exist in French
+// (see src/config/cities.ts) — unlike /blog, which is now fully translated.
+// A link to them from an EN/AR article must stay a bare, unprefixed path
+// rather than being locale-prefixed by next-intl's Link.
+function isFrenchOnlyPath(href: string) {
+  return href.startsWith("/creation-site-web-");
+}
 
 export const mdxComponents: MDXComponents = {
   h2: ({ children, ...props }) => (
@@ -46,6 +55,16 @@ export const mdxComponents: MDXComponents = {
     </li>
   ),
   a: ({ href, children, ...props }) => {
+    if (href?.startsWith("/") && isFrenchOnlyPath(href)) {
+      return (
+        <NextLink
+          href={href}
+          className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+        >
+          {children}
+        </NextLink>
+      );
+    }
     if (href?.startsWith("/")) {
       return (
         <Link

@@ -40,39 +40,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Blog and local-SEO pages are French-only for now (see cities.ts / blog.ts).
-  entries.push({
-    url: `${siteConfig.url}/blog`,
-    lastModified: now,
-    changeFrequency: "weekly",
-    priority: 0.9,
-  });
-
-  for (const slug of getAllPostSlugs()) {
+  // The blog is fully translated (content/blog/{fr,en,ar}); the local-SEO
+  // city pages remain French-only (see src/config/cities.ts).
+  for (const locale of locales as readonly Locale[]) {
     entries.push({
-      url: `${siteConfig.url}/blog/${slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    });
-  }
-
-  for (const category of getAllCategories()) {
-    entries.push({
-      url: `${siteConfig.url}/blog/categorie/${slugify(category)}`,
+      url: localizedUrl(locale, "/blog"),
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.5,
+      priority: 0.9,
+      alternates: { languages: alternates("/blog") },
     });
-  }
 
-  for (const tag of getAllTags()) {
-    entries.push({
-      url: `${siteConfig.url}/blog/tag/${slugify(tag)}`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.4,
-    });
+    for (const slug of getAllPostSlugs(locale)) {
+      const path = `/blog/${slug}`;
+      const languages: Record<string, string> = {};
+      for (const loc of locales as readonly Locale[]) {
+        if (getAllPostSlugs(loc).includes(slug)) {
+          languages[loc] = localizedUrl(loc, path);
+        }
+      }
+      if (languages[defaultLocale]) languages["x-default"] = languages[defaultLocale];
+
+      entries.push({
+        url: localizedUrl(locale, path),
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: { languages },
+      });
+    }
+
+    for (const category of getAllCategories(locale)) {
+      entries.push({
+        url: localizedUrl(locale, `/blog/categorie/${slugify(category)}`),
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.5,
+      });
+    }
+
+    for (const tag of getAllTags(locale)) {
+      entries.push({
+        url: localizedUrl(locale, `/blog/tag/${slugify(tag)}`),
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.4,
+      });
+    }
   }
 
   entries.push({

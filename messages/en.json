@@ -402,5 +402,19 @@
         "description": "Tutorial videos are provided after delivery so you know exactly how to manage your website."
       }
     }
+  },
+  "Blog": {
+    "metaTitle": "Youness Web Blog — Website Creation in Morocco",
+    "metaDescription": "Advice, guides, and insights on building websites, e-commerce, and SEO for Moroccan businesses.",
+    "heading": "The Youness Web Blog",
+    "intro": "Practical guides to help you build, improve, and promote your business website in Morocco — pricing, e-commerce, WordPress, local SEO, and more.",
+    "searchPlaceholder": "Search an article...",
+    "allCategories": "All",
+    "noResults": "No article matches your search.",
+    "minRead": "min read",
+    "relatedArticles": "Related articles",
+    "tableOfContents": "Table of contents",
+    "breadcrumbHome": "Home",
+    "breadcrumbBlog": "Blog"
   }
 }

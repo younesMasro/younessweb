@@ -402,5 +402,19 @@
         "description": "Des vidéos tutorielles sont fournies après la livraison afin que vous sachiez exactement comment gérer votre site."
       }
     }
+  },
+  "Blog": {
+    "metaTitle": "Blog Youness Web — Création de site web au Maroc",
+    "metaDescription": "Conseils, guides et actualités sur la création de sites web, le e-commerce et le référencement (SEO) pour les entreprises marocaines.",
+    "heading": "Le blog Youness Web",
+    "intro": "Des guides pratiques pour créer, améliorer et faire connaître le site web de votre entreprise au Maroc — prix, e-commerce, WordPress, SEO local et bien plus.",
+    "searchPlaceholder": "Rechercher un article...",
+    "allCategories": "Tous",
+    "noResults": "Aucun article ne correspond à votre recherche.",
+    "minRead": "min de lecture",
+    "relatedArticles": "Articles similaires",
+    "tableOfContents": "Table des matières",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbBlog": "Blog"
   }
 }

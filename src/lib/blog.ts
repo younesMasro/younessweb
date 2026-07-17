@@ -3,8 +3,9 @@ import path from "node:path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 import GithubSlugger from "github-slugger";
+import type { Locale } from "@/i18n/routing";
 
-const BLOG_DIR = path.join(process.cwd(), "content/blog");
+const BLOG_ROOT = path.join(process.cwd(), "content/blog");
 
 export type PostFrontmatter = {
   title: string;
@@ -34,8 +35,12 @@ export type Post = PostSummary & {
   toc: TocItem[];
 };
 
-function readMdxFile(slug: string) {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
+function localeDir(locale: Locale) {
+  return path.join(BLOG_ROOT, locale);
+}
+
+function readMdxFile(locale: Locale, slug: string) {
+  const filePath = path.join(localeDir(locale), `${slug}.mdx`);
   const raw = fs.readFileSync(filePath, "utf8");
   return matter(raw);
 }
@@ -55,17 +60,18 @@ function extractToc(markdown: string): TocItem[] {
   return toc;
 }
 
-export function getAllPostSlugs(): string[] {
-  if (!fs.existsSync(BLOG_DIR)) return [];
+export function getAllPostSlugs(locale: Locale): string[] {
+  const dir = localeDir(locale);
+  if (!fs.existsSync(dir)) return [];
   return fs
-    .readdirSync(BLOG_DIR)
+    .readdirSync(dir)
     .filter((file) => file.endsWith(".mdx"))
     .map((file) => file.replace(/\.mdx$/, ""));
 }
 
-export function getPostBySlug(slug: string): Post | null {
+export function getPostBySlug(locale: Locale, slug: string): Post | null {
   try {
-    const { data, content } = readMdxFile(slug);
+    const { data, content } = readMdxFile(locale, slug);
     const frontmatter = data as PostFrontmatter;
 
     return {
@@ -80,10 +86,10 @@ export function getPostBySlug(slug: string): Post | null {
   }
 }
 
-export function getAllPosts(): PostSummary[] {
-  return getAllPostSlugs()
+export function getAllPosts(locale: Locale): PostSummary[] {
+  return getAllPostSlugs(locale)
     .map((slug) => {
-      const { data, content } = readMdxFile(slug);
+      const { data, content } = readMdxFile(locale, slug);
       const frontmatter = data as PostFrontmatter;
       return {
         ...frontmatter,
@@ -94,20 +100,20 @@ export function getAllPosts(): PostSummary[] {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-export function getPostsByCategory(category: string): PostSummary[] {
-  return getAllPosts().filter(
+export function getPostsByCategory(locale: Locale, category: string): PostSummary[] {
+  return getAllPosts(locale).filter(
     (post) => slugify(post.category) === slugify(category),
   );
 }
 
-export function getPostsByTag(tag: string): PostSummary[] {
-  return getAllPosts().filter((post) =>
+export function getPostsByTag(locale: Locale, tag: string): PostSummary[] {
+  return getAllPosts(locale).filter((post) =>
     post.tags.some((t) => slugify(t) === slugify(tag)),
   );
 }
 
-export function getRelatedPosts(post: PostSummary, limit = 3): PostSummary[] {
-  const others = getAllPosts().filter((p) => p.slug !== post.slug);
+export function getRelatedPosts(locale: Locale, post: PostSummary, limit = 3): PostSummary[] {
+  const others = getAllPosts(locale).filter((p) => p.slug !== post.slug);
 
   const scored = others.map((other) => {
     let score = 0;
@@ -123,14 +129,26 @@ export function getRelatedPosts(post: PostSummary, limit = 3): PostSummary[] {
     .map((entry) => entry.post);
 }
 
-export function getAllCategories(): string[] {
-  const categories = new Set(getAllPosts().map((post) => post.category));
+export function getAllCategories(locale: Locale): string[] {
+  const categories = new Set(getAllPosts(locale).map((post) => post.category));
   return Array.from(categories);
 }
 
-export function getAllTags(): string[] {
-  const tags = new Set(getAllPosts().flatMap((post) => post.tags));
+export function getAllTags(locale: Locale): string[] {
+  const tags = new Set(getAllPosts(locale).flatMap((post) => post.tags));
   return Array.from(tags);
+}
+
+// Slugs that exist in French but haven't been translated into every other
+// locale yet. Used by the language switcher: navigating away from one of
+// these to a locale where it doesn't exist would 404, so it falls back to
+// the blog index in that locale instead.
+export function getFrenchOnlySlugs(): string[] {
+  const frSlugs = getAllPostSlugs("fr");
+  const otherLocaleSlugs = (["en", "ar"] as Locale[]).map(
+    (locale) => new Set(getAllPostSlugs(locale)),
+  );
+  return frSlugs.filter((slug) => otherLocaleSlugs.some((set) => !set.has(slug)));
 }
 
 export function slugify(value: string): string {

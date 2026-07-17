@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
 import { routing } from "@/i18n/routing";
 import { buildMetadata, localBusinessJsonLd, organizationJsonLd } from "@/lib/seo";
+import { getFrenchOnlySlugs } from "@/lib/blog";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
@@ -64,6 +65,7 @@ export default async function LocaleLayout({
   const dir = locale === "ar" ? "rtl" : "ltr";
   const jsonLd = localBusinessJsonLd(locale);
   const orgJsonLd = organizationJsonLd();
+  const frenchOnlySlugs = getFrenchOnlySlugs();
 
   return (
     <html
@@ -89,7 +91,7 @@ export default async function LocaleLayout({
           </Suspense>
           <SmoothScrollProvider>
             <AnnouncementBar />
-            <Header />
+            <Header frenchOnlySlugs={frenchOnlySlugs} />
             <main>{children}</main>
             <Footer />
             <FloatingSupportWidget />

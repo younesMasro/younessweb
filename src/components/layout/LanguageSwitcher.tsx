@@ -19,20 +19,25 @@ const labels: Record<Locale, string> = {
   ar: "AR",
 };
 
-// The blog and the local-SEO landing pages (/creation-site-web-*) only
-// exist in French (see content/blog and src/config/cities.ts) — they
-// aren't registered under the [locale] pathnames, so next-intl can't
-// translate their URL. Switching language from one of these must fall
-// back to that locale's homepage instead of a 404.
-function isFrenchOnlyPath(pathname: string) {
-  return pathname === "/blog" || pathname.startsWith("/blog/") || pathname.startsWith("/creation-site-web-");
+// The local-SEO landing pages (/creation-site-web-*) only exist in French
+// (see src/config/cities.ts) — switching language from one of these must
+// fall back to that locale's homepage instead of a 404.
+function isFrenchOnlyLandingPage(pathname: string) {
+  return pathname.startsWith("/creation-site-web-");
 }
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ frenchOnlySlugs }: { frenchOnlySlugs: string[] }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("Languages");
   const pathname = usePathname();
   const router = useRouter();
+
+  // A specific blog post that hasn't been translated into every locale yet
+  // (see getFrenchOnlySlugs) would 404 if we just re-prefixed the same
+  // path — fall back to the blog index in the target locale instead.
+  const isUntranslatedPost = frenchOnlySlugs.some(
+    (slug) => pathname === `/blog/${slug}`,
+  );
 
   return (
     <DropdownMenu>
@@ -52,8 +57,12 @@ export function LanguageSwitcher() {
           <DropdownMenuItem
             key={loc}
             onClick={() => {
-              if (loc !== "fr" && isFrenchOnlyPath(pathname)) {
+              if (loc === "fr") {
+                router.replace(pathname, { locale: loc });
+              } else if (isFrenchOnlyLandingPage(pathname)) {
                 router.replace("/", { locale: loc });
+              } else if (isUntranslatedPost) {
+                router.replace("/blog", { locale: loc });
               } else {
                 router.replace(pathname, { locale: loc });
               }
