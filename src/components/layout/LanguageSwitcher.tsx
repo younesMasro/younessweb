@@ -19,6 +19,15 @@ const labels: Record<Locale, string> = {
   ar: "AR",
 };
 
+// The blog and the local-SEO landing pages (/creation-site-web-*) only
+// exist in French (see content/blog and src/config/cities.ts) — they
+// aren't registered under the [locale] pathnames, so next-intl can't
+// translate their URL. Switching language from one of these must fall
+// back to that locale's homepage instead of a 404.
+function isFrenchOnlyPath(pathname: string) {
+  return pathname === "/blog" || pathname.startsWith("/blog/") || pathname.startsWith("/creation-site-web-");
+}
+
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale;
   const t = useTranslations("Languages");
@@ -42,7 +51,13 @@ export function LanguageSwitcher() {
         {locales.map((loc) => (
           <DropdownMenuItem
             key={loc}
-            onClick={() => router.replace(pathname, { locale: loc })}
+            onClick={() => {
+              if (loc !== "fr" && isFrenchOnlyPath(pathname)) {
+                router.replace("/", { locale: loc });
+              } else {
+                router.replace(pathname, { locale: loc });
+              }
+            }}
             className={cn(
               "cursor-pointer",
               loc === locale && "text-primary font-medium",
