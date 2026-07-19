@@ -36,20 +36,22 @@ export function ServicesSection() {
             const Icon = serviceIcons[service.icon];
             return (
               <FadeIn key={service.id} delay={0.05 * i}>
-                <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-card/60 p-6 transition-all duration-300 hover:border-primary/30 hover:bg-card">
+                <div className="group relative flex h-full items-start gap-4 overflow-hidden rounded-2xl border border-white/10 bg-card/60 p-6 transition-all duration-300 hover:border-primary/30 hover:bg-card">
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-primary/10 blur-2xl transition-opacity duration-300 group-hover:opacity-100 opacity-0"
                   />
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
-                    <Icon className="size-6" />
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
+                    <Icon className="size-5" />
                   </div>
-                  <h3 className="mt-5 text-lg font-semibold">
-                    {service.title[locale]}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {service.description[locale]}
-                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold">
+                      {service.title[locale]}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {service.description[locale]}
+                    </p>
+                  </div>
                 </div>
               </FadeIn>
             );

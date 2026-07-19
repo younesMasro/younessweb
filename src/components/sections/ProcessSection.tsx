@@ -48,11 +48,13 @@ export function ProcessSection() {
           {steps.map(({ key, icon: Icon }, i) => (
             <FadeIn key={key} delay={0.07 * i}>
               <div className="glass relative h-full rounded-2xl p-6">
-                <span className="text-4xl font-bold text-white/10">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="mt-3 flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="size-5" />
+                <div className="flex items-center gap-3">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="size-5" />
+                  </div>
+                  <span className="text-2xl font-bold text-gradient-brand">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <h3 className="mt-4 text-base font-semibold">
                   {t(`steps.${key}.title`)}

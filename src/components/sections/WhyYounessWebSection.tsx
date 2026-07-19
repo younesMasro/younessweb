@@ -60,9 +60,9 @@ export function WhyYounessWebSection({
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {points.map(({ key, icon: Icon }, i) => (
             <FadeIn key={key} delay={0.05 * i}>
-              <div className="glass flex h-full flex-col items-start gap-3 rounded-2xl p-6">
-                <div className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
-                  <Icon className="size-5" />
+              <div className="glass flex h-full items-center gap-3 rounded-2xl p-4">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
+                  <Icon className="size-4.5" />
                 </div>
                 <p className="text-sm font-medium text-foreground/90">
                   {t(`points.${key}`)}

@@ -84,13 +84,17 @@ export function PricingCards({
 
               <ul className="mt-7 flex-1 space-y-3">
                 {features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-sm">
-                    <Check
+                  <li key={idx} className="flex items-center gap-2.5 text-sm">
+                    <span
                       className={cn(
-                        "mt-0.5 size-4 shrink-0",
-                        pkg.popular ? "text-secondary" : "text-primary",
+                        "flex size-5 shrink-0 items-center justify-center rounded-full border",
+                        pkg.popular
+                          ? "border-secondary/30 bg-secondary/10 text-secondary"
+                          : "border-primary/25 bg-primary/10 text-primary",
                       )}
-                    />
+                    >
+                      <Check className="size-3" />
+                    </span>
                     <span className="text-foreground/85">{feature}</span>
                   </li>
                 ))}

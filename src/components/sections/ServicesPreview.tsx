@@ -44,16 +44,18 @@ export function ServicesPreview({
             const Icon = serviceIcons[service.icon];
             return (
               <FadeIn key={service.id} delay={0.05 * i}>
-                <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-card/60 p-6 transition-all duration-300 hover:border-primary/30 hover:bg-card">
-                  <div className="flex size-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
+                <div className="group relative flex h-full items-start gap-3.5 overflow-hidden rounded-2xl border border-white/10 bg-card/60 p-6 transition-all duration-300 hover:border-primary/30 hover:bg-card">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
                     <Icon className="size-5" />
                   </div>
-                  <h3 className="mt-4 text-base font-semibold">
-                    {service.title[locale]}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {service.description[locale]}
-                  </p>
+                  <div>
+                    <h3 className="text-base font-semibold">
+                      {service.title[locale]}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {service.description[locale]}
+                    </p>
+                  </div>
                 </div>
               </FadeIn>
             );
