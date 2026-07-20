@@ -80,6 +80,11 @@ export async function buildMetadata(
       index: true,
       follow: true,
     },
+    verification: {
+      other: {
+        "facebook-domain-verification": "4j3x9xwcu2m8xtckt7risqsaeohu0k",
+      },
+    },
   };
 }
 
