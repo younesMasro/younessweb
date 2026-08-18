@@ -129,6 +129,19 @@ export const portfolioProjects: PortfolioProject[] = [
     url: "https://cuttsalons.com/",
   },
   {
+    id: "1921",
+    title: "BADYSS",
+    slug: "badyss",
+    categories: ["ecommerce"],
+    description: {
+      en: "A modern online store built to showcase products and turn visitors into buyers.",
+      fr: "Une boutique en ligne moderne conçue pour mettre en valeur les produits et convertir les visiteurs en acheteurs.",
+      ar: "متجر إلكتروني عصري صُمم لعرض المنتجات وتحويل الزوار إلى مشترين.",
+    },
+    image: "/images/portfolio/Screenshot-2026-08-18-at-22.35.39-scaled.png",
+    url: "https://www.badyss.ma/",
+  },
+  {
     id: "1757",
     title: "O’TAS Fencing & Gates",
     slug: "otas-fencing-gates",
@@ -582,19 +595,6 @@ export const portfolioProjects: PortfolioProject[] = [
     },
     image: "/images/portfolio/Screenshot-2025-08-28-at-00.29.03-scaled.png",
     url: null,
-  },
-  {
-    id: "1921",
-    title: "BADYSS",
-    slug: "badyss",
-    categories: ["ecommerce"],
-    description: {
-      en: "A modern online store built to showcase products and turn visitors into buyers.",
-      fr: "Une boutique en ligne moderne conçue pour mettre en valeur les produits et convertir les visiteurs en acheteurs.",
-      ar: "متجر إلكتروني عصري صُمم لعرض المنتجات وتحويل الزوار إلى مشترين.",
-    },
-    image: "/images/portfolio/Screenshot-2026-08-18-at-22.35.39-scaled.png",
-    url: "https://www.badyss.ma/",
   },
 ];
 
